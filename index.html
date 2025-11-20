@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dijital Jeoturizm Turu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #0f1620; color: #e6eef3; }
+    #map { height: 70vh; }
+    .panel-toggle {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #2ea6ff; color: #0f1620;
+      padding: 10px 16px; border-radius: 12px;
+      z-index: 999; cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .floating-panel {
+      position: fixed; bottom: 70px; right: 20px;
+      width: 320px; max-height: 80vh; overflow-y: auto;
+      background: #1a1a2e; border: 2px solid #2ea6ff;
+      border-radius: 12px; padding: 12px;
+      z-index: 998; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .hidden { transform: scale(0.95); opacity: 0; pointer-events: none; }
+
+    .filter-panel h3, .observationForm h3 { color: #2ea6ff; margin-top: 0; }
+    .filter-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .filter-group label {
+      background: #0f1620; padding: 6px 10px;
+      border-radius: 8px; cursor: pointer;
+    }
+    .filter-panel select, .observationForm input, .observationForm textarea, .observationForm select {
+      width: 100%; margin-bottom: 8px; padding: 6px;
+      border-radius: 6px; border: none;
+      background: #0b0f14; color: #e6eef3;
+    }
+    .observationForm button {
+      background: #2ea6ff; color: #0f1620;
+      padding: 6px 12px; border: none;
+      border-radius: 6px; cursor: pointer;
+    }
+    .timeline {
+      scroll-behavior: smooth;
+      margin-top: 12px; max-height: 150px;
+      overflow-y: auto;
+    }
+    .timeline-item {
+      padding: 4px 6px; cursor: pointer;
+      border-radius: 6px; margin-bottom: 4px;
+      background: #0f1620; color: #e6eef3;
+    }
+    .timeline-item.active {
+      background: #2ea6ff; color: #0f1620; font-weight: bold;
+    }
+    .highlighted-fault {
+      box-shadow: 0 0 12px 4px rgba(255, 69, 0, 0.8);
+      border-radius: 50%;
+    }
+    .simulation-icon {
+      opacity: 0.6;
+      border: 2px dashed #ccc;
+      border-radius: 50%;
+    }
+    .segment-highlight {
+      color: #ff6b00 !important;
+      weight: 5 !important;
+      opacity: 0.95 !important;
+    }
+    .segment-controls {
+      margin-top:8px;
+      display:flex;
+      gap:8px;
+    }
+    .segment-controls button {
+      background:#ff6b00; color:#0f1620; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <button id="togglePanel" class="panel-toggle">🔍 Filtreleri Göster</button>
+  <div id="floatingPanel" class="floating-panel hidden">
+    <div class="filter-panel" id="filters">
+      <h3>🔍 Fay Sistemine Göre Filtrele</h3>
+      <div class="filter-group">
+        <label><input type="checkbox" class="system-filter" value="KAF" checked> KAF</label>
+        <label><input type="checkbox" class="system-filter" value="DAF" checked> DAF</label>
+        <label><input type="checkbox" class="system-filter" value="Normal" checked> Normal</label>
+        <label><input type="checkbox" class="system-filter" value="San Andreas" checked> San Andreas</label>
+        <label><input type="checkbox" class="system-filter" value="Simulation" checked> Simülasyon</label>
+      </div>
+      <select id="year-filter">
+        <option value="all">Tüm Yıllar</option>
+        <option value="1900-1950">1900–1950</option>
+        <option value="1951-2000">1951–2000</option>
+        <option value="2001-2025">2001–2025</option>
+      </select>
+    </div>
+
+    <div class="observationForm">
+      <h3>📝 Gözlem Ekle</h3>
+      <input type="text" id="userName" placeholder="Adınız">
+      <textarea id="userComment" placeholder="Gözleminiz"></textarea>
+      <input type="text" id="userPhoto" placeholder="Fotoğraf URL (isteğe bağlı)">
+      <select id="selectObservationPoint">
+        <option value="">Deprem seçiniz</option>
+      </select>
+      <button id="submitObservation">Gözlem Ekle</button>
+    </div>
+
+    <h3>⏳ Zaman Çizelgesi</h3>
+    <div id="timeline" class="timeline"></div>
+  </div>
+
+<script>
+// Harita başlat
+let map = L.map('map').setView([39.0, 35.0], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+let markers = [];
+const tourBaseURL = "https://earth.google.com/..."; // Google Earth Studio turu
+
+// Deprem verisi
+const observationPoints = [
+  { name: "1939 Erzincan", lat: 39.57, lon: 39.77, system: "KAF", type: "Strike-slip", year: 1939, magnitude: 7.9, description: "KAF – ~360 km yüzey kırığı", image: "", observations: [] },
+  { name: "1999 İzmit", lat: 40.76, lon: 29.97, system: "KAF", type: "Strike-slip", year: 1999, magnitude: 7.4, description: "KAF – Marmara doğu segmenti", image: "", observations: [] }
+];
+
+// Marker yerleştirme
+function getIconSize(mag){ return [16+mag*2,16+mag*2]; }
+
+function placeMarkers(points){
+  markers.forEach(m=>map.removeLayer(m));
+  markers = [];
+  points.forEach(pt=>{
+    let obsHTML = "";
+    if(pt.observations.length>0){
+      obsHTML += "<hr><b>Katılımcı Gözlemleri:</b><br>";
+      pt.observations.forEach(obs=>{
+        obsHTML += `<p><i>${obs.user}:</i> ${obs.comment}`;
+        if(obs.photo) obsHTML += `<br><img src="${obs.photo}" style="max-width:100%;margin-top:4px;border-radius:4px;">`;
+        obsHTML += "</p>";
+      });
+    }
+    const marker = L.circleMarker([pt.lat,pt.lon], {
+      radius: 6 + pt.magnitude,
+      color: pt.onFault ? "#ff6b00" : "#2ea6ff",
+      fillOpacity: 0.8
+    }).bindPopup(`
+      <strong>${pt.name}</strong><br>
+      ${pt.system} – ${pt.type}<br>
+      <b>M ${pt.magnitude}</b> – ${pt.year}<br>
+      ${pt.description}
+      ${pt.image ? `<br><img src="${pt.image}" style="max-width:100%;margin-top:6px;border-radius:4px;">` : ""}
+      <br><button onclick="flyToEarth(${pt.lat},${pt.lon})">3D Turda Göster</button>
+      ${obsHTML}
+    `).addTo(map);
+    markers.push(marker);
+  });
+}
+
+// Gözlem ekleme
+const selectObservationPoint = document.getElementById('selectObservationPoint');
+observationPoints.forEach(pt=>{
+  const opt = document.createElement('option');
+  opt.value = pt.name; opt.textContent = pt.name;
+  selectObservationPoint.appendChild(opt);
+});
+
+document.getElementById('submitObservation').addEventListener('click', ()=>{
+  const user = document.getElementById('userName').value.trim();
+  const comment = document.getElementById('userComment').value.trim();
+  const photo = document.getElementById('userPhoto').value.trim();
+  const selectedDep = selectObservationPoint.value;
+  if(!user || !comment || !selectedDep){ alert("Lütfen tüm alanları doldurun"); return; }
+  const pt = observationPoints.find(p=>p.name===selectedDep);
+  if(pt){
+    pt.observations.push({user, comment, photo});
+    placeMarkers(observationPoints);
+    document.getElementById('userName').value = '';
+    document.getElementById('userComment').value = '';
+    document.getElementById('userPhoto').value = '';
+    alert("Gözlem eklendi ✅");
+  }
+});
+
+// Zaman çizelgesi
+const timelineDiv = document.getElementById('timeline');
+observationPoints.forEach(pt=>{
+  const item = document.createElement('div');
+  item.className = 'timeline-item';
+  item.textContent = `${pt.year} – ${pt.name}`;
+  item.onclick = ()=>{
+    map.setView([pt.lat, pt.lon], 7);
+    document.querySelectorAll('.timeline-item').forEach(i=>i.classList.remove('active'));
+    item.classList.add('active');
+    flyToEarth(pt.lat, pt.lon);
+  };
+  timelineDiv.appendChild(item);
+});
+
+// Panel aç/kapa
+document.getElementById('togglePanel').addEventListener('click', ()=>{
+  document.getElementById('floatingPanel').classList.toggle('hidden');
+});
+document.querySelectorAll('.system-filter').forEach(cb=>cb.addEventListener('change', applyFilters));
+document.getElementById('year-filter').addEventListener('change', applyFilters);
+
+function applyFilters(){
+  const activeSystems = Array.from(document.querySelectorAll('.system-filter:checked')).map(cb=>cb.value);
+  const yearRange = document.getElementById('year-filter').value;
+  let filtered = observationPoints.filter(pt=>activeSystems.includes(pt.system));
+  if(yearRange!=='all'){
+    const [start,end] = yearRange.split('-').map(Number);
+    filtered = filtered.filter(pt=>pt.year>=start && pt.year<=end);
+  }
+  placeMarkers(filtered);
+}
+
+// Google Earth bağlantısı
+function flyToEarth(lat, lon){
+  window.open(`${tourBaseURL}#${lat},${lon}`, '_blank');
+}
+
+// Fayları yükle
+fetch("diri_faylar.geojson")
+  .then(res => res.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: { color: "red", weight: 2 },
+      onEachFeature: function (feature, layer) {
+        const segmentName = feature.properties?.segment || "Bilinmeyen Segment";
+        layer.bindPopup(`<b>${segmentName}</b><br><div class="segment-controls"><button onclick="filterBySegment('${segmentName}')">Bu segmentteki depremleri göster</button></div>`);
+      }
+    }).addTo(map);
+  })
+  .catch(err => console.log("Fay verisi yüklenemedi", err));
+
+// Segment filtreleme
+function filterBySegment(segmentName){
+  const filtered = observationPoints.filter(pt=>pt.description.includes(segmentName));
+  placeMarkers(filtered);
+}
+</script>
+</body>
+</html>
