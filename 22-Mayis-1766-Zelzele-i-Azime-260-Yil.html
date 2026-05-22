@@ -1,0 +1,1230 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>22 Mayıs 1766 İstanbul Depremi — Zelzele-i Azime · 260. Yıl · SeismoReport</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg:#07090f; --surface:#0b0f1a; --panel:#0f1520;
+  --panel2:#131c2b; --panel3:#1a2236;
+  --blue:#3b9eff; --blue-dark:#1a6fc4;
+  --orange:#e67e22; --green:#22c55e;
+  --red:#f5576c; --red-dark:#c0392b;
+  --purple:#9b59b6; --gold:#c9a84c; --gold-light:#e8c97a;
+  --text:#dde6f0; --muted:#64748b; --soft:#8fa8c0;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.13);
+  --border-gold:rgba(201,168,76,0.3);
+  --border-blue:rgba(59,158,255,0.25);
+  --border-red:rgba(245,87,108,0.3);
+  --border-green:rgba(34,197,94,0.28);
+  --shadow:0 8px 40px rgba(0,0,0,0.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+p{text-align:justify;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;
+  line-height:1.85;min-height:100vh;padding:24px 16px 56px;
+}
+.hb-wrap{
+  max-width:960px;margin:0 auto;
+  background:var(--surface);
+  border-radius:22px;border:1px solid var(--border2);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+
+/* ── SOURCE BANNER ── */
+.src-banner{
+  background:linear-gradient(90deg,rgba(201,168,76,0.14),rgba(245,87,108,0.06));
+  border-bottom:1px solid rgba(201,168,76,0.25);
+  padding:10px 28px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.src-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 6px var(--gold);
+  flex-shrink:0;
+}
+.src-label{font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+.src-link{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--blue);text-decoration:none;opacity:0.85;}
+.src-link:hover{opacity:1;text-decoration:underline;}
+.src-reviewed{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.3);border-radius:4px;padding:3px 10px;background:rgba(201,168,76,0.07);}
+
+/* ── RIBBON ── */
+.hb-ribbon{
+  background:linear-gradient(135deg,#060a14 0%,#0d1525 50%,#080e1b 100%);
+  border-bottom:1px solid var(--border2);
+  padding:18px 28px 16px;position:relative;overflow:hidden;
+}
+.hb-ribbon::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--red),var(--purple),var(--gold));background-size:200%;animation:shimmer 4s linear infinite;}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+.hb-ribbon-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.hb-badge{font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
+.hb-badge.sr{background:rgba(59,158,255,0.15);color:var(--blue);border:1px solid rgba(59,158,255,0.3);}
+.hb-badge.hist{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
+.hb-badge.risk{background:rgba(245,87,108,0.12);color:var(--red);border:1px solid var(--border-red);}
+.hb-badge.anni{background:rgba(155,89,182,0.14);color:var(--purple);border:1px solid rgba(155,89,182,0.28);}
+.hb-ribbon-title{font-family:'Montserrat',sans-serif;font-size:0.79rem;font-weight:600;color:var(--soft);margin-bottom:8px;letter-spacing:0.02em;}
+.hb-ribbon-meta{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--muted);line-height:1.75;}
+.hb-ribbon-meta strong{color:var(--soft);}
+
+/* ── HERO ── */
+.hb-hero{
+  background:linear-gradient(160deg,#0d1828 0%,#091320 40%,#0a0f1e 100%);
+  padding:54px 42px 46px;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.hb-hero::after{content:'1766';position:absolute;right:-24px;bottom:-50px;font-family:'Montserrat',sans-serif;font-size:16rem;font-weight:900;color:rgba(201,168,76,0.04);line-height:1;pointer-events:none;user-select:none;}
+.hb-eyebrow{display:block;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.hb-hero h1{font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:800;line-height:1.2;color:#fff;margin-bottom:20px;}
+.hl-gold{color:var(--gold);} .hl-blue{color:var(--blue);} .hl-red{color:var(--red);} .hl-green{color:var(--green);} .hl-purple{color:var(--purple);}
+.hb-hero-sub{font-size:1.08rem;color:var(--soft);max-width:700px;line-height:1.9;margin-bottom:28px;}
+.hb-hero-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.hb-hero-tag{font-family:'Montserrat',sans-serif;font-size:0.69rem;font-weight:500;background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:6px;padding:7px 13px;color:var(--soft);}
+.hb-hero-tag.verified{border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.06);color:var(--gold);}
+.hb-hero-tag.warn{border-color:rgba(245,87,108,0.3);background:rgba(245,87,108,0.06);color:var(--red);}
+
+/* ── VIDEO EMBED ── */
+.hb-video-section{margin:32px 0 0;max-width:700px;}
+.hb-video-label{font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.hb-video-label::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red);animation:pulse-red 1.8s ease-in-out infinite;}
+@keyframes pulse-red{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.85);}}
+.hb-video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid rgba(245,87,108,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.5);}
+.hb-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+
+/* ── INNER ── */
+.hb-inner{padding:0 24px 44px;display:flex;flex-direction:column;align-items:center;}
+.hb-inner > *{width:100%;max-width:700px;}
+.hb-inner > .hb-stat-row,.hb-inner > .hb-prox,.hb-inner > .hb-exec,.hb-inner > .hb-official{max-width:700px;}
+.hb-inner > section{width:100%;max-width:700px;}
+
+/* ── EXEC ── */
+.hb-exec{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(59,158,255,0.04));border:1px solid var(--border-gold);border-radius:14px;padding:28px 30px;margin:32px 0;}
+.hb-exec-label{font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.hb-exec p{color:#d4c09a;font-size:0.98rem;line-height:2;text-align:justify;}
+
+/* ── OFFICIAL DATA CARD ── */
+.hb-official{background:linear-gradient(135deg,rgba(201,168,76,0.07),rgba(59,158,255,0.04));border:1px solid rgba(201,168,76,0.22);border-radius:14px;padding:24px 26px;margin:24px 0;}
+.hb-official-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.hb-official-head h4{font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+.hb-official-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.hb-off-item{background:rgba(0,0,0,0.2);border-radius:8px;padding:12px 16px;}
+.hb-off-key{font-family:'Montserrat',sans-serif;font-size:0.59rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px;}
+.hb-off-val{font-family:'JetBrains Mono',monospace;font-size:0.92rem;font-weight:600;color:var(--gold-light);}
+.hb-off-val.green{color:var(--green);} .hb-off-val.blue{color:var(--blue);} .hb-off-val.red{color:var(--red);} .hb-off-val.purple{color:var(--purple);}
+
+/* ── STAT ROW ── */
+.hb-stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin:28px 0;}
+.hb-stat-box{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;transition:transform 0.2s,border-color 0.2s;}
+.hb-stat-box:hover{transform:translateY(-2px);}
+.hb-stat-box.gold-box{background:linear-gradient(135deg,rgba(201,168,76,0.14),rgba(201,168,76,0.04));border-color:var(--border-gold);}
+.hb-stat-box.red-box{background:linear-gradient(135deg,rgba(245,87,108,0.14),rgba(245,87,108,0.04));border-color:var(--border-red);}
+.hb-stat-box.blue-box{background:linear-gradient(135deg,rgba(59,158,255,0.12),rgba(59,158,255,0.03));border-color:var(--border-blue);}
+.hb-stat-box.green-box{background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.03));border-color:var(--border-green);}
+.hb-stat-box.purple-box{background:linear-gradient(135deg,rgba(155,89,182,0.12),rgba(155,89,182,0.03));border-color:rgba(155,89,182,0.28);}
+.hb-stat-num{display:block;font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;line-height:1.1;margin-bottom:8px;}
+.gold-box .hb-stat-num{color:var(--gold-light);} .red-box .hb-stat-num{color:var(--red);} .blue-box .hb-stat-num{color:var(--blue);} .green-box .hb-stat-num{color:var(--green);} .purple-box .hb-stat-num{color:var(--purple);}
+.hb-stat-label{font-family:'Montserrat',sans-serif;font-size:0.63rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;line-height:1.6;}
+
+/* ── SECTION LABEL ── */
+.hb-section-lbl{margin:38px 0 16px;display:flex;align-items:center;gap:14px;}
+.hb-section-lbl span{font-family:'Montserrat',sans-serif;font-size:0.64rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);padding:5px 14px;border:1px solid rgba(59,158,255,0.28);border-radius:4px;background:rgba(59,158,255,0.06);white-space:nowrap;}
+.hb-section-lbl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(59,158,255,0.3),transparent);}
+.hb-section-lbl.gold span{color:var(--gold);border-color:rgba(201,168,76,0.28);background:rgba(201,168,76,0.06);}
+.hb-section-lbl.gold::after{background:linear-gradient(90deg,rgba(201,168,76,0.3),transparent);}
+.hb-section-lbl.red span{color:var(--red);border-color:rgba(245,87,108,0.28);background:rgba(245,87,108,0.06);}
+.hb-section-lbl.red::after{background:linear-gradient(90deg,rgba(245,87,108,0.3),transparent);}
+
+/* ── PROSE ── */
+.hb-prose{font-size:1.05rem;color:var(--text);line-height:1.95;margin:0 0 20px;text-align:justify;}
+
+/* ── PERSONAL NOTE ── */
+.hb-personal-note{background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:20px 0;}
+.pn-label{display:block;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.hb-personal-note p{color:#d4c09a;font-size:0.97rem;line-height:1.85;}
+
+/* ── ANALYSIS ── */
+.hb-analysis{border-radius:12px;padding:22px 24px;margin:22px 0;}
+.hb-analysis.gold{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.03));border:1px solid rgba(201,168,76,0.25);}
+.hb-analysis.red{background:linear-gradient(135deg,rgba(245,87,108,0.1),rgba(245,87,108,0.03));border:1px solid rgba(245,87,108,0.25);}
+.hb-analysis.blue{background:linear-gradient(135deg,rgba(59,158,255,0.1),rgba(59,158,255,0.03));border:1px solid rgba(59,158,255,0.22);}
+.hb-analysis.green{background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.03));border:1px solid rgba(34,197,94,0.25);}
+.hb-analysis.purple{background:linear-gradient(135deg,rgba(155,89,182,0.1),rgba(155,89,182,0.03));border:1px solid rgba(155,89,182,0.25);}
+.hb-analysis-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.hb-analysis-icon{font-size:1.3rem;}
+.hb-analysis-head h4{font-family:'Montserrat',sans-serif;font-size:0.74rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;}
+.hb-analysis.gold .hb-analysis-head h4{color:var(--gold);} .hb-analysis.red .hb-analysis-head h4{color:var(--red);} .hb-analysis.blue .hb-analysis-head h4{color:var(--blue);} .hb-analysis.green .hb-analysis-head h4{color:var(--green);} .hb-analysis.purple .hb-analysis-head h4{color:var(--purple);}
+.hb-analysis p{font-size:0.95rem;color:var(--soft);line-height:1.85;margin-bottom:8px;text-align:justify;}
+.hb-analysis p:last-child{margin-bottom:0;}
+.hb-analysis ul{padding-left:20px;margin-top:8px;}
+.hb-analysis li{font-size:0.93rem;color:var(--soft);line-height:1.8;margin-bottom:6px;}
+
+/* ── COMPARISON TABLE ── */
+.hb-table-wrap{overflow-x:auto;margin:20px 0;border-radius:12px;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-family:'Montserrat',sans-serif;}
+thead th{background:var(--panel3);color:var(--blue);font-size:0.64rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;}
+tbody td{padding:11px 16px;font-size:0.88rem;color:var(--text);border-bottom:1px solid var(--border);line-height:1.5;font-family:'Crimson Pro',serif;}
+tbody tr:last-child td{border-bottom:none;}
+.td-mono{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--gold-light);}
+.td-note{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);}
+
+/* ── PROX TABLE ── */
+.hb-prox{background:var(--panel2);border-radius:14px;overflow:hidden;border:1px solid var(--border);margin:22px 0;}
+.hb-prox-head{padding:14px 18px;background:var(--panel3);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.hb-prox-head h5{font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+.hb-prox-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0;}
+.hb-prox-item{padding:10px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.prox-place{font-size:0.88rem;color:var(--text);}
+.prox-dist{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--gold);font-weight:500;white-space:nowrap;margin-left:12px;}
+
+/* ── TWO COL ── */
+.hb-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+.hb-info-box{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.hb-info-box h5{font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.hb-info-box p{font-size:0.92rem;color:var(--soft);line-height:1.8;text-align:justify;}
+.mono{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--gold-light);display:block;margin-bottom:4px;}
+
+/* ── THINK ZONE ── */
+.hb-thinkzone{background:linear-gradient(135deg,rgba(59,158,255,0.08),rgba(59,158,255,0.02));border:1px solid rgba(59,158,255,0.2);border-radius:12px;padding:20px 22px;margin:20px 0;}
+.hb-thinkzone-lbl{display:block;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.hb-thinkzone p{font-size:0.95rem;color:var(--soft);line-height:1.8;text-align:justify;}
+.hb-thinkzone2{background:linear-gradient(135deg,rgba(201,168,76,0.07),rgba(201,168,76,0.02));border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:20px 22px;margin:20px 0;}
+.hb-thinkzone2-lbl{display:block;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.hb-thinkzone2 p{font-size:0.95rem;color:var(--soft);line-height:1.8;text-align:justify;}
+
+/* ── RISK ALERT ── */
+.hb-risk-alert{background:linear-gradient(135deg,rgba(245,87,108,0.1),rgba(245,87,108,0.03));border:1px solid rgba(245,87,108,0.3);border-radius:14px;padding:22px 24px;margin:22px 0;display:flex;gap:18px;}
+.hb-risk-icon{font-size:2rem;min-width:36px;}
+.hb-risk-content h5{font-family:'Montserrat',sans-serif;font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.hb-risk-content p{font-size:0.93rem;color:var(--soft);line-height:1.8;margin-bottom:10px;}
+.hb-risk-content ul{padding-left:18px;}
+.hb-risk-content li{font-size:0.92rem;color:var(--soft);line-height:1.8;margin-bottom:5px;}
+
+/* ── EDU STEPS ── */
+.hb-edu-steps{display:flex;flex-direction:column;gap:12px;margin:20px 0;}
+.hb-edu-step{display:flex;gap:16px;align-items:flex-start;background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.hb-edu-num{font-size:1.6rem;min-width:32px;}
+.hb-edu-step h5{font-family:'Montserrat',sans-serif;font-size:0.73rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.hb-edu-step p{font-size:0.92rem;color:var(--soft);line-height:1.75;text-align:justify;}
+
+/* ── HIGHLIGHT ── */
+.hb-highlight{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(59,158,255,0.06));border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 22px;margin:20px 0;font-size:0.98rem;color:#d4c09a;line-height:1.9;}
+
+/* ── TECTONIC ZONES ── */
+.hb-tecto-grid{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.hb-tecto-zone{border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start;}
+.hb-tecto-zone.zone1{background:rgba(245,87,108,0.08);border:1px solid rgba(245,87,108,0.22);}
+.hb-tecto-zone.zone2{background:rgba(155,89,182,0.08);border:1px solid rgba(155,89,182,0.22);}
+.hb-tecto-zone.zone3{background:rgba(230,126,34,0.08);border:1px solid rgba(230,126,34,0.22);}
+.hb-zone-num{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;min-width:40px;line-height:1;}
+.zone1 .hb-zone-num{color:var(--red);} .zone2 .hb-zone-num{color:var(--purple);} .zone3 .hb-zone-num{color:var(--orange);}
+.hb-zone-content h5{font-family:'Montserrat',sans-serif;font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:7px;}
+.zone1 .hb-zone-content h5{color:var(--red);} .zone2 .hb-zone-content h5{color:var(--purple);} .zone3 .hb-zone-content h5{color:var(--orange);}
+.hb-zone-content p{font-size:0.92rem;color:var(--soft);line-height:1.75;text-align:justify;}
+
+/* ── FINAL ── */
+.hb-final{background:linear-gradient(135deg,#0c1426 0%,#101a2e 50%,#0a1020 100%);border:1px solid var(--border-gold);border-radius:16px;padding:40px 32px;margin:28px auto;text-align:center;position:relative;overflow:hidden;max-width:700px;width:100%;}
+.hb-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(201,168,76,0.08) 0%,transparent 65%);}
+.hb-final h2{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;line-height:1.35;color:#fff;margin-bottom:18px;position:relative;}
+.hb-final-sub{font-size:1rem;color:var(--soft);max-width:620px;margin:0 auto 28px;line-height:1.9;position:relative;}
+.hb-pillars{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;position:relative;}
+.hb-pillar{font-family:'Montserrat',sans-serif;font-size:0.68rem;font-weight:600;padding:8px 16px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:var(--soft);letter-spacing:0.06em;}
+
+/* ── DIVIDER ── */
+.hb-divider{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:36px 0;}
+
+/* ── APPENDIX ── */
+.ap-wrap{margin:20px 0;}
+.ap-block{border-radius:10px;padding:18px 22px;margin-bottom:14px;}
+.ap-gold{background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.2);}
+.ap-blue{background:rgba(59,158,255,0.07);border:1px solid rgba(59,158,255,0.18);}
+.ap-red{background:rgba(245,87,108,0.06);border:1px solid rgba(245,87,108,0.18);}
+.ap-block h4{font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.ap-gold h4{color:var(--gold);} .ap-blue h4{color:var(--blue);} .ap-red h4{color:var(--red);}
+.ap-block p,.ap-block li{font-size:0.9rem;color:var(--soft);line-height:1.85;text-align:justify;}
+.ap-block ul{padding-left:18px;}
+.ap-block li{margin-bottom:5px;}
+
+/* ── FOOTER ── */
+.hb-footer{background:var(--panel);border-top:1px solid var(--border);padding:20px 34px;text-align:center;font-family:'Montserrat',sans-serif;font-size:0.73rem;color:var(--muted);line-height:1.85;}
+.hb-footer strong{color:var(--gold);}
+.hb-footer em{color:var(--blue);font-style:normal;}
+
+/* ── TIMELINE ── */
+.hb-timeline{display:flex;flex-direction:column;gap:0;margin:20px 0;}
+.hb-tl-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);}
+.hb-tl-item:last-child{border-bottom:none;}
+.hb-tl-year{font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:700;color:var(--gold);min-width:50px;margin-top:2px;}
+.hb-tl-dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.hb-tl-dot.red{background:var(--red);box-shadow:0 0 6px var(--red);}
+.hb-tl-dot.gold{background:var(--gold);box-shadow:0 0 6px var(--gold);}
+.hb-tl-dot.blue{background:var(--blue);box-shadow:0 0 6px var(--blue);}
+.hb-tl-dot.purple{background:var(--purple);box-shadow:0 0 6px var(--purple);}
+.hb-tl-dot.green{background:var(--green);box-shadow:0 0 6px var(--green);}
+.hb-tl-content h5{font-family:'Montserrat',sans-serif;font-size:0.74rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:5px;}
+.hb-tl-content p{font-size:0.9rem;color:var(--soft);line-height:1.75;}
+
+/* ── GEO GRID ── */
+.hb-geo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:20px 0;}
+.hb-geo-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:20px 16px;transition:border-color 0.2s,transform 0.2s;}
+.hb-geo-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.hb-geo-icon{font-size:1.6rem;display:block;margin-bottom:10px;}
+.hb-geo-card h4{font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;color:var(--gold);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;}
+.hb-geo-card p{font-size:0.9rem;color:var(--soft);line-height:1.65;}
+
+@media(max-width:640px){
+  .hb-hero{padding:36px 20px 32px;}
+  .hb-hero h1{font-size:1.75rem;}
+  .hb-inner{padding:0 18px 32px;}
+  .hb-final{padding:32px 20px;}
+  .hb-final h2{font-size:1.35rem;}
+  .hb-footer{padding:16px 18px;}
+  .hb-two-col{grid-template-columns:1fr;}
+  .hb-ribbon{padding:14px 18px 12px;}
+}
+</style>
+</head>
+<body>
+<div class="hb-wrap">
+
+<!-- ══ YILDONUMU BANNER ══ -->
+<div style="background:linear-gradient(90deg,rgba(201,168,76,0.2),rgba(155,89,182,0.08));border-bottom:2px solid rgba(201,168,76,0.5);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div style="font-size:1.6rem;">🕯️</div>
+    <div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#e8c97a;margin-bottom:3px;">22 Mayıs 1766 · 260. Yıl Dönümü</div>
+      <div style="font-size:0.88rem;color:#8fa8c0;line-height:1.55;font-family:'Crimson Pro',serif;">Zelzele-i Azime — Marmara'nın 260 yıllık sismik sükûtu ve bugün altımızda biriken 3.7 metrelik borç.</div>
+    </div>
+  </div>
+  <div style="font-family:'Montserrat',sans-serif;font-size:0.78rem;font-weight:700;color:#c9a84c;border:1px solid rgba(201,168,76,0.4);border-radius:8px;padding:10px 20px;background:rgba(201,168,76,0.08);">
+    22 Mayıs 2026 · Bugün
+  </div>
+</div>
+
+<!-- SOURCE BANNER -->
+<div class="src-banner">
+  <span class="src-dot"></span>
+  <span class="src-label">Tarihsel Arşiv · EPICA v1.1 · SHEEC · Ambraseys (2002) · Parsons (2004)</span>
+  <a class="src-link" href="https://www.emidius.eu/SHEEC/" target="_blank" rel="noopener">emidius.eu · SHEEC Katalog · 1766-05-22 · Mw 6.76–7.10</a>
+  <span class="src-reviewed">✓ Akademik İncelemeli</span>
+</div>
+
+<!-- RIBBON -->
+<div class="hb-ribbon">
+  <div class="hb-ribbon-badges">
+    <span class="hb-badge sr">SeismoReport</span>
+    <span class="hb-badge hist">Tarihsel Sismoloji</span>
+    <span class="hb-badge risk">Marmara Sismik Riski</span>
+    <span class="hb-badge anni">260. Yıl · 1766–2026</span>
+  </div>
+  <div class="hb-ribbon-title">Tarihsel Deprem Analizi · Mw ~7.1 İstanbul — 22 Mayıs 1766 · Zelzele-i Azime</div>
+  <div class="hb-ribbon-meta">
+    <strong>Yazar:</strong> Prof. Dr. Ali Osman Öncel &nbsp;·&nbsp;
+    <strong>Rapor Tarihi:</strong> 22 Mayıs 2026 &nbsp;·&nbsp;
+    <strong>Olay Tarihi:</strong> 22 Mayıs 1766, sabah 05:30 (tahmini yerel) &nbsp;·&nbsp;
+    <strong>Konum (SHEEC):</strong> 40.837°N, 29.463°E &nbsp;·&nbsp;
+    <strong>Büyüklük Aralığı:</strong> Mw 6.76 – 7.10 &nbsp;·&nbsp;
+    <strong>Episantr Belirsizliği:</strong> ±9.5 – 50 km
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hb-hero">
+  <span class="hb-eyebrow">Kuzey Anadolu Fay Zonu · Adalar Segmenti · Marmara Denizi · Osmanlı İstanbulu · 260. Yıl Dönümü</span>
+  <h1>
+    22 Mayıs 1766 İstanbul<br />
+    <span class="hl-gold">Zelzele-i Azime:</span><br />
+    <span class="hl-red">260 Yıllık Sismik Borç</span> ve<br />
+    <span class="hl-purple">Episantr Bilmecesi</span>
+  </h1>
+  <p class="hb-hero-sub">
+    Sabah saatlerinde Marmara Denizi'ni sarsan "Büyük Sarsıntı", Fatih Camii'nin kubbesini yıkmış, Boğaziçi'nde tsunami yaratmış ve yaklaşık 5.300 can almıştır. Depremin tam yeri — Adalar segmenti mi, Orta Marmara mı? — bugün bile tartışılmaktadır. 260 yıl sonra, yıllık 10–15 mm biriken kayma açığı (slip deficit) <strong>~3.7 metreye</strong> ulaşmış; bu borç, Mw 7.2–7.5 potansiyeli taşımaktadır.
+  </p>
+  <div class="hb-hero-tags">
+    <span class="hb-hero-tag verified">📜 Osmanlı Arşivi + The Gazette (1766) · Doğrulanmış</span>
+    <span class="hb-hero-tag">🌊 <strong>Tsunami Kaydı</strong> — Boğaziçi / Galata Kıyısı</span>
+    <span class="hb-hero-tag">🕌 <strong>Fatih Camii Kubbesi Çöktü</strong> — 100 Öğrenci</span>
+    <span class="hb-hero-tag">⚠️ <strong>İkiz Deprem: +75 Gün</strong> — 5 Ağustos 1766 Mw ~7.6</span>
+    <span class="hb-hero-tag warn">🔴 <strong>260 Yıl Sessiz</strong> — Slip Deficit ~3.7 m</span>
+    <span class="hb-hero-tag">📊 <strong>Episantr Farkı:</strong> Kataloglar arası ±50 km</span>
+  </div>
+  <div class="hb-video-section">
+    <div class="hb-video-label">▶ Video Belgesel</div>
+    <div class="hb-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/wb7U0atLRlw"
+        title="22 Mayıs 1766 İstanbul Depremi — Zelzele-i Azime · 260. Yıl"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- İÇERİK -->
+<div class="hb-inner">
+
+<!-- YÖNETİCİ ÖZETİ -->
+<div class="hb-exec">
+  <div class="hb-exec-label">📋 Yönetici Özeti — 260. Yıl Analizi</div>
+  <p>
+    Osmanlı İstanbulluları, 22 Mayıs 1766 sabahı saat <strong>05:30 civarında</strong> (tahmini) yataklarından silkinen bir sarsıntıyla uyandı. "Zelzele-i Azime" (Büyük Sarsıntı) olarak tarihe geçen bu deprem, 1509 "Kıyamet-i Sugra"dan (Küçük Kıyamet) bu yana yaşanan en büyük İstanbul depremi olarak Osmanlı arşivlerine girdi. Episantr, farklı kataloglara göre <strong>40.8–41.0°N / 28.3–29.5°E</strong> aralığında bildirilmekte olup 50 km'yi aşan bu mekânsal belirsizlik, günümüz sismik risk analizlerini doğrudan etkileyen temel bir "epistemik belirsizlik" kaynağı olmayı sürdürmektedir. 22 Mayıs'tan tam <strong>75 gün sonra</strong> (5 Ağustos 1766) Marmara'nın batısındaki Ganos segmenti de Mw ~7.6 ile kırılmış; bu ikiz deprem serisi, 1766 yılını Marmara'nın tüm sismik sistemini baştan aşağı zorlayan istisnai bir "deprem yılı" hâline getirmiştir. 260 yıl sonra bugün (22 Mayıs 2026), Ergintav ve arkadaşlarının (2014) GPS verileriyle saptadığı <strong>~3.7 metrelik kayma açığı</strong>, bu fay segmentinin hâlâ kilitli olduğunu ve birikmiş enerjinin boşalmayı beklediğini göstermektedir.
+  </p>
+</div>
+
+<!-- RESMİ VERİ -->
+<div class="hb-official">
+  <div class="hb-official-head">
+    <span style="font-size: 1.4rem;">📡</span>
+    <h4>Parametreler — Çoklu Katalog Karşılaştırması</h4>
+  </div>
+  <div class="hb-official-grid">
+    <div class="hb-off-item"><span class="hb-off-key">Tarih</span><span class="hb-off-val">22 Mayıs 1766</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Büyüklük Aralığı</span><span class="hb-off-val red">Mw 6.76 – 7.10</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Saat (tahmini)</span><span class="hb-off-val blue">~05:30 Yerel</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Osmanlı Adı</span><span class="hb-off-val purple">Zelzele-i Azime</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Episantr (SHEEC)</span><span class="hb-off-val">40.837°N · 29.463°E</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Episantr Belirsizliği</span><span class="hb-off-val red">±9.5 km (Enl.) · ±23.2 km (Boy.)</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Kataloglar Arası Fark</span><span class="hb-off-val red">~50 km (boylamsal)</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Can Kaybı (Parsons, 2004)</span><span class="hb-off-val">~5.300</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Tsunami</span><span class="hb-off-val green">Boğaziçi · Galata Kıyısı</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">Fay Segmenti (tahmini)</span><span class="hb-off-val">Adalar / Orta Marmara</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">İkiz Deprem</span><span class="hb-off-val purple">5 Ağustos 1766 · Mw ~7.6 · Ganos</span></div>
+    <div class="hb-off-item"><span class="hb-off-key">260 Yıllık Slip Deficit</span><span class="hb-off-val red">~3.7 m · Mw 7.2–7.5 potansiyeli</span></div>
+  </div>
+</div>
+
+<!-- STAT ROW -->
+<div class="hb-stat-row">
+  <div class="hb-stat-box gold-box"><span class="hb-stat-num">~7.1</span><div class="hb-stat-label">Mw Büyüklük<br />Papazachos &amp; P. (2003)</div></div>
+  <div class="hb-stat-box red-box"><span class="hb-stat-num">260</span><div class="hb-stat-label">Yıl Sükûnet<br />1766–2026</div></div>
+  <div class="hb-stat-box purple-box"><span class="hb-stat-num">75 gün</span><div class="hb-stat-label">İkiz Deprem Aralığı<br />22 Mayıs → 5 Ağustos</div></div>
+  <div class="hb-stat-box blue-box"><span class="hb-stat-num">3.7 m</span><div class="hb-stat-label">Slip Deficit<br />Ergintav vd. (2014)</div></div>
+  <div class="hb-stat-box green-box"><span class="hb-stat-num">±50 km</span><div class="hb-stat-label">Episantr Belirsizliği<br />Kataloglar Arası Fark</div></div>
+</div>
+
+<!-- BÖLÜM 01: KATALOg KARŞILAŞTIRMASI -->
+<div class="hb-section-lbl gold"><span>01 — Episantr Bilmecesi: 4 Katalog · 4 Farklı Yer</span></div>
+
+<p class="hb-prose">
+  Modern sismoloji öncesi tarihsel depremlerin dış merkez lokasyonu, sismometre kaydıyla değil; o dönemin hasar dağılım raporlarından (macroseismic data — MMI) geriye hesaplanarak (back-projection) elde edilir. Bu yöntem, tarihsel bilginin kalitesine ve kullanılan sönümlenme (attenuation) modeline bağlı olduğu için farklı çalışma grupları aynı deprem için birbirinden önemli ölçüde ayrışan episantrlar üretebilmektedir. 22 Mayıs 1766 depremi bu durumun klasik bir örneğidir.
+</p>
+
+<div class="hb-thinkzone">
+  <span class="hb-thinkzone-lbl">🔍 Düşünce Deneyi — 6 Şubat 2023 Kahramanmaraş Depremi 1766'da Olsaydı</span>
+  <p>
+    6 Şubat 2023 depremi, aslında iki büyük kırılmadan oluşuyordu: sabah 04:17'de Pazarcık segmentinde <strong>Mw 7.8</strong>, aynı gün 13:24'te Elbistan–Göksun segmentinde <strong>Mw 7.6</strong>. Kahramanmaraş, Hatay, Adıyaman, Malatya, Gaziantep başta olmak üzere <strong>11 il</strong> etkilendi; toplam fay kırığı ~350 km boyunca uzandı.
+  </p>
+  <p>
+    Bu deprem 1766'da olsaydı ne kalırdı elimizde? Kadı sicilleri "sabah büyük sarsıntı" ve "öğleden sonra tekrar büyük sarsıntı" diye iki ayrı olay kaydederdi; muhtemelen her ikisi de "zelzele-i azime" olarak anılırdı. 11 ilin hasar raporları aylarca, hatta yıllarca merkeze ulaşırdı — ulaşanlar eksik, mükerrer ya da abartılı olabilirdi. Günümüz araştırmacısı bu raporları toplayıp makrosismik yoğunluk haritasına döktüğünde, ~350 km'lik diffuse bir alan karşısında kalırdı.
+  </p>
+  <p>
+    Hangi sönümlenme modeli kullanılırsa kullanılsın <strong>tek bir nokta episantr</strong> bulunamazdı; model Gaziantep'i gösterirken bir başkası Adıyaman'ı, üçüncüsü Hatay kıyısını işaret edebilirdi. Kataloglar arası fark kolaylıkla <strong>100–150 km</strong>'yi aşardı — 1766 İstanbul depreminin 28.3°E ile 29.5°E arasındaki ~120 km'lik yayılımıyla neredeyse özdeş. Üstelik çift kırılma nedeniyle bazı kataloglar bunu bir deprem, bazıları iki ayrı deprem olarak kodlardı.
+  </p>
+  <p style="color:var(--gold-light);font-style:italic;">
+    Sonuç: Teknolojinin yokluğunda 11 şehri etkileyen bir deprem, 260 yıl sonra kaç episantr üretirdi sorusunun yanıtı, 1766 depreminin neden bu kadar farklı koordinat taşıdığını sezgisel olarak açıklıyor. Makrosismik back-projection bir kusur değil, mevcut verinin sınırı içindeki en iyi tahmindir.
+  </p>
+</div>
+
+<div class="hb-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Kaynak</th>
+        <th>Enlem (°N)</th>
+        <th>Boylam (°E)</th>
+        <th>Mw / Ms</th>
+        <th>Io</th>
+        <th>Episantr Bölgesi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SHEEC / EPICAv1.1</strong> (Üniv. Thessaloniki, 2003)</td>
+        <td class="td-mono">40.837</td>
+        <td class="td-mono">29.463</td>
+        <td class="td-mono">Mw 6.76 ± 0.38</td>
+        <td class="td-mono">8</td>
+        <td>Adalar Seg. — Doğu ucu (~İzmit Körfezi)</td>
+      </tr>
+      <tr>
+        <td><strong>Papazachos &amp; P.</strong> (2003)</td>
+        <td class="td-mono">40.800</td>
+        <td class="td-mono">29.100</td>
+        <td class="td-mono">Mw 7.10</td>
+        <td class="td-mono">9</td>
+        <td>Adalar Seg. — Orta kesim</td>
+      </tr>
+      <tr>
+        <td><strong>Soysal vd.</strong> (1981)</td>
+        <td class="td-mono">41.000</td>
+        <td class="td-mono">29.000</td>
+        <td class="td-mono">Ms 6.80</td>
+        <td class="td-mono">—</td>
+        <td>İstanbul Boğazı — Kuzey</td>
+      </tr>
+      <tr>
+        <td><strong>Shebalin vd.</strong> (1974)</td>
+        <td class="td-mono">41.000</td>
+        <td class="td-mono">29.000</td>
+        <td class="td-mono">—</td>
+        <td class="td-mono">9</td>
+        <td>İstanbul Boğazı — Kuzey</td>
+      </tr>
+      <tr>
+        <td><strong>Ambraseys</strong> (2002)</td>
+        <td class="td-mono">40.8</td>
+        <td class="td-mono">~28.3</td>
+        <td class="td-mono">Ms ~7.1</td>
+        <td class="td-mono">—</td>
+        <td>Orta/Batı Marmara — "Western Marmara Sea"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── AHEAD İSTATİSTİK ANALİZİ ── -->
+<div class="hb-section-lbl"><span>01b — Çok-Katalog İstatistik: Ortalama, Sapma, Uç Değerler</span></div>
+
+<p class="hb-prose">
+  AHEAD veritabanı (emidius.eu) ve ilgili akademik kataloglardan derlenen <strong>6 birincil tarihsel episantr tahmini</strong> için tanımlayıcı istatistik aşağıda sunulmaktadır. Parsons (2004) bir PSHA (olasılıksal sismik tehlike) sentezi olduğundan episantr karşılaştırmasına dahil edilmemiştir; Ambraseys (2002) ise AHEAD kapsamı dışında kalan ama bölgenin birincil tarihsel sismoloji kaynağıdır. <strong>Derinlik verisi hiçbir tarihsel katalogda mevcut değildir;</strong> yalnızca Yenihayat (2022) stokastik simülasyonu her iki senaryo için 5 km odak derinliği önermektedir.
+</p>
+
+<!-- Stat kutuları -->
+<div class="hb-stat-row" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
+  <div class="hb-stat-box gold-box">
+    <span class="hb-stat-num" style="font-size:1.25rem;">40.837°N</span>
+    <div class="hb-stat-label">Med. Enlem<br /><span style="color:var(--soft);font-size:0.75em;">MAD ±0.037° · n=6</span></div>
+  </div>
+  <div class="hb-stat-box blue-box">
+    <span class="hb-stat-num" style="font-size:1.25rem;">29.050°E</span>
+    <div class="hb-stat-label">Med. Boylam<br /><span style="color:var(--soft);font-size:0.75em;">MAD ±0.232° · n=6</span></div>
+  </div>
+  <div class="hb-stat-box purple-box">
+    <span class="hb-stat-num" style="font-size:1.4rem;">Mw 6.80</span>
+    <div class="hb-stat-label">Med. Büyüklük<br /><span style="color:var(--soft);font-size:0.75em;">MAD ±0.04 · n=5</span></div>
+  </div>
+  <div class="hb-stat-box red-box">
+    <span class="hb-stat-num" style="font-size:1.6rem;">~98 km</span>
+    <div class="hb-stat-label">Boylam Yayılımı<br /><span style="color:var(--soft);font-size:0.75em;">28.30°E → 29.46°E</span></div>
+  </div>
+  <div class="hb-stat-box green-box">
+    <span class="hb-stat-num" style="font-size:1.6rem;">5 km</span>
+    <div class="hb-stat-label">Derinlik · Medyan<br /><span style="color:var(--soft);font-size:0.75em;">MAD: 0 · Yenihayat (2022) · 6/6 tarihsel katalog belirsiz</span></div>
+  </div>
+</div>
+
+<!-- Medyan notu -->
+<div class="hb-thinkzone" style="margin-top:0;">
+  <span class="hb-thinkzone-lbl">📐 Neden Medyan ve MAD?</span>
+  <p>
+    Küçük örneklemlerde (n=5–6) ve potansiyel aykırı değer içeren dağılımlarda <strong>medyan</strong>, ortalamaya göre daha dayanıklı (robust) bir merkez ölçüsüdür; eşli yayılım ölçütü olarak <strong>MAD (Medyan Mutlak Sapma)</strong> standart sapmaya kıyasla aykırı değerlerden etkilenmez. Büyüklük dağılımı iki grubu yansıtıyor: <em>6.76–6.80 grubu</em> (SHEEC, EPICA, Soysal — ağırlıklı olarak makrosismik yoğunluktan türetilmiş) ve <em>7.10 grubu</em> (Papazachos, Ambraseys — daha geniş etki alanı yorumu). Bu iki-modlu yapıda medyan (6.80) bu kırılım noktasını yansıtır; ortalama (6.90) ise iki grubun arasında askıda kalır. Boylam için ise Ambraseys'in (28.30°E) batı uç değeri medyanı (29.050°E) etkilemez — oysa ortalamayı (29.054°E) yaklaşık 0.7° batıya çeker.
+  </p>
+</div>
+
+<!-- Boylam görsel şeridi -->
+<div style="background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:22px 0;">
+  <div style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;">📍 Boylam Dağılımı — 28.30°E → 29.46°E (≈ 98 km yay)</div>
+  <div style="position:relative;height:52px;background:linear-gradient(90deg,rgba(245,87,108,0.15),rgba(59,158,255,0.15));border-radius:8px;margin-bottom:10px;">
+    <!-- Ambraseys 28.30°E → 0% -->
+    <div style="position:absolute;left:0%;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:2px;height:100%;background:var(--red);"></div>
+    </div>
+    <div style="position:absolute;left:0%;top:-18px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--red);white-space:nowrap;transform:translateX(-50%);">28.30°E<br /><span style="color:var(--muted);">Ambraseys</span></div>
+    <!-- Soysal/Shebalin/Parsons 29.00°E → 58.6% -->
+    <div style="position:absolute;left:58.6%;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:2px;height:100%;background:var(--orange);"></div>
+    </div>
+    <div style="position:absolute;left:58.6%;top:-18px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--orange);white-space:nowrap;transform:translateX(-50%);">29.00°E<br /><span style="color:var(--muted);">Soysal / Shebalin</span></div>
+    <!-- Papazachos 29.10°E → 67.2% -->
+    <div style="position:absolute;left:67.2%;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:2px;height:100%;background:var(--purple);"></div>
+    </div>
+    <div style="position:absolute;left:67.2%;top:-18px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--purple);white-space:nowrap;transform:translateX(-50%);">29.10°E<br /><span style="color:var(--muted);">Papazachos</span></div>
+    <!-- Ortalama 29.054°E → 64.8% — gold dashed -->
+    <div style="position:absolute;left:64.8%;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:3px;height:100%;background:var(--gold);box-shadow:0 0 6px var(--gold);"></div>
+    </div>
+    <div style="position:absolute;left:64.8%;bottom:-20px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--gold);white-space:nowrap;transform:translateX(-50%);">29.054°E · ORT.</div>
+    <!-- SHEEC/EPICA 29.463°E → 96.8% -->
+    <div style="position:absolute;left:96.8%;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:2px;height:100%;background:var(--blue);"></div>
+    </div>
+    <div style="position:absolute;left:96.8%;top:-18px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--blue);white-space:nowrap;transform:translateX(-50%);">29.46°E<br /><span style="color:var(--muted);">SHEEC/EPICA</span></div>
+  </div>
+  <div style="margin-top:32px;font-family:'Montserrat',sans-serif;font-size:0.6rem;color:var(--muted);">
+    ← Batı (Ambraseys, CMF) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doğu (SHEEC, Adalar) →
+  </div>
+</div>
+
+<!-- Uç değer kartları -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;">
+
+  <!-- Episantr: En uzak / En yakın (ortalamayla) -->
+  <div style="background:linear-gradient(135deg,rgba(245,87,108,0.08),rgba(245,87,108,0.02));border:1px solid rgba(245,87,108,0.25);border-radius:12px;padding:18px 20px;">
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:12px;">📍 Ortalamayla Mesafe — Episantr</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">🔴 En uzak</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--red);">Ambraseys 2002 · ~64 km</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">🟠 2. uzak</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--orange);">SHEEC / EPICA · ~35 km</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">🟢 En yakın</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--green);">Papazachos 2003 · ~10 km</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.88rem;color:var(--soft);">🟣 2. yakın</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--purple);">Soysal / Shebalin · ~14 km</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Büyüklük ve şiddet uçları -->
+  <div style="background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.02));border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:18px 20px;">
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">📊 Büyüklük (Mw) ve Şiddet (Io) Uçları</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">Max Mw</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--red);">Mw ~7.20 · Parsons (2004)</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">Min Mw</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--blue);">Mw 6.76 · SHEEC / EPICA</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">Max Io</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--red);">Io 9 · Papazachos / Shebalin</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.88rem;color:var(--soft);">Min Io</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--blue);">Io 8 · SHEEC / EPICA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enlem uçları -->
+  <div style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.22);border-radius:12px;padding:18px 20px;">
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">🧭 Enlem Aralığı (K–G): ±0.09° · ~22 km</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">En kuzey</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--green);">41.000°N · Soysal / Shebalin</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">En güney</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--gold);">40.800°N · Papazachos / Ambraseys</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.88rem;color:var(--muted);">Fark: 0.200° ≈ 22 km (K–G)</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--muted);">SD: ±0.09°</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Derinlik -->
+  <div style="background:linear-gradient(135deg,rgba(155,89,182,0.08),rgba(155,89,182,0.02));border:1px solid rgba(155,89,182,0.22);border-radius:12px;padding:18px 20px;">
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;">⬇️ Odak Derinliği</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">7 / 7 tarihsel katalog</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--muted);">— (belirsiz)</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:7px;">
+        <span style="font-size:0.88rem;color:var(--soft);">Yenihayat S1 (2022)</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--purple);">5 km · CMF</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.88rem;color:var(--soft);">Yenihayat S2 (2022)</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--purple);">5 km · CMF</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BÖLÜM 01c: İNTERAKTİF 50 KM TAMPON -->
+<div class="hb-section-lbl"><span>01c — Medyan Episantr · 50 km Tarihsel Sismik Tarama</span></div>
+
+<p class="hb-prose">
+  Medyan episantr (40.837°N · 29.050°E) merkez alınarak 50 km yarıçapı içindeki tarihsel depremler Ambraseys (2002), SHEEC ve AHEAD kayıtlarından derlenmiştir. Tablo haversine formülüyle hesaplanmış gerçek mesafeleri göstermektedir. Büyüklük filtresi ve sıralama seçenekleriyle interaktif olarak inceleyebilirsiniz.
+</p>
+
+<!-- Filtre + buton çubuğu -->
+<div style="background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:18px 0;display:flex;flex-wrap:wrap;align-items:center;gap:18px;">
+  <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:200px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap;">Min Mw</span>
+    <input type="range" id="mw-slider" min="5.0" max="7.5" step="0.1" value="5.0"
+      style="flex:1;accent-color:var(--gold);cursor:pointer;" oninput="document.getElementById('mw-val').textContent=parseFloat(this.value).toFixed(1);eqRender();" />
+    <span id="mw-val" style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--gold-light);min-width:28px;">5.0</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--soft);">Sırala</span>
+    <select id="eq-sort" onchange="eqRender()"
+      style="background:var(--panel3);color:var(--text);border:1px solid var(--border2);border-radius:6px;padding:5px 10px;font-family:'Montserrat',sans-serif;font-size:0.7rem;cursor:pointer;">
+      <option value="date">Tarih</option>
+      <option value="mw">Büyüklük ↓</option>
+      <option value="dist">Mesafe ↑</option>
+      <option value="io">Şiddet ↓</option>
+    </select>
+  </div>
+  <a href="https://emidius.eu/AHEAD/event/17660522_0000_000" target="_blank" rel="noopener"
+    style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(59,158,255,0.35);border-radius:6px;padding:7px 14px;background:rgba(59,158,255,0.07);text-decoration:none;white-space:nowrap;">
+    ↗ AHEAD'de 50 km Tampon
+  </a>
+</div>
+
+<!-- Olay sayacı -->
+<div id="eq-count" style="font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;"></div>
+
+<!-- Tablo -->
+<div class="hb-table-wrap" id="eq-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Tarih</th>
+        <th>Olay</th>
+        <th>Enlem · Boylam</th>
+        <th>Mw / Ms</th>
+        <th>Io</th>
+        <th>Mesafe</th>
+        <th>Kaynak</th>
+      </tr>
+    </thead>
+    <tbody id="eq-tbody"></tbody>
+  </table>
+</div>
+
+<script>
+(function(){
+  var EQ = [
+    { date:'1509-09-10', name:'Kıyamet-i Suğra — İstanbul', lat:40.70, lon:29.00, mw:7.1, io:10, src:'Ambraseys (2002)', ref:false },
+    { date:'1719-05-25', name:'İstanbul / Adalar bölgesi', lat:40.70, lon:29.30, mw:7.0, io:9,  src:'SHEEC · Ambraseys (2002)', ref:false },
+    { date:'1754-09-22', name:'İstanbul / Marmara', lat:40.90, lon:29.20, mw:6.3, io:8,  src:'Ambraseys (2002)', ref:false },
+    { date:'1766-05-22', name:'Zelzele-i Azime ★', lat:40.837,lon:29.050,mw:6.80,io:8,  src:'Medyan · Bu analiz', ref:true  },
+    { date:'1766-11-13', name:'İstanbul artçısı', lat:40.90, lon:29.10, mw:5.82,io:null,src:'AHEAD', ref:false },
+    { date:'1894-07-10', name:'Adalar / İstanbul', lat:40.80, lon:29.20, mw:6.9, io:9,  src:'SHEEC · Yenihayat (2022)', ref:false }
+  ];
+  var CX=40.837, CY=29.050, R=50;
+
+  function hav(a1,o1,a2,o2){
+    var R6=6371,d2r=Math.PI/180;
+    var dlat=(a2-a1)*d2r, dlon=(o2-o1)*d2r;
+    var s=Math.sin(dlat/2)*Math.sin(dlat/2)+
+          Math.cos(a1*d2r)*Math.cos(a2*d2r)*
+          Math.sin(dlon/2)*Math.sin(dlon/2);
+    return 2*R6*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));
+  }
+
+  window.eqRender=function(){
+    var minMw=parseFloat(document.getElementById('mw-slider').value);
+    var srt=document.getElementById('eq-sort').value;
+    var rows=EQ.map(function(e){
+      return Object.assign({},e,{dist:hav(CX,CY,e.lat,e.lon)});
+    }).filter(function(e){ return e.dist<=R && e.mw>=minMw; });
+    rows.sort(function(a,b){
+      if(srt==='date') return a.date<b.date?-1:1;
+      if(srt==='mw')   return b.mw-a.mw;
+      if(srt==='dist') return a.dist-b.dist;
+      if(srt==='io')   return (b.io||0)-(a.io||0);
+      return 0;
+    });
+    document.getElementById('eq-count').textContent=
+      rows.length+' olay · Mw ≥ '+minMw.toFixed(1)+' · Merkez: 40.837°N, 29.050°E · Yarıçap: 50 km';
+    var html=rows.map(function(e){
+      var mc=e.mw>=7.0?'#f5576c':e.mw>=6.0?'#c9a84c':'#3b9eff';
+      var rs=e.ref?'background:rgba(201,168,76,0.09);':'';
+      var io=e.io!=null?e.io:'—';
+      var ahead=e.ref?'<a href="https://emidius.eu/AHEAD/event/17660522_0000_000" target="_blank" style="color:#3b9eff;font-size:0.72rem;margin-left:4px;">↗ AHEAD</a>':'';
+      return '<tr style="'+rs+'">'+
+        '<td style="font-family:\'JetBrains Mono\',monospace;font-size:0.83rem;">'+e.date+'</td>'+
+        '<td>'+e.name+'</td>'+
+        '<td class="td-mono">'+e.lat.toFixed(3)+'°N · '+e.lon.toFixed(3)+'°E</td>'+
+        '<td class="td-mono" style="color:'+mc+';font-weight:700;">'+e.mw.toFixed(2)+'</td>'+
+        '<td class="td-mono">'+io+'</td>'+
+        '<td class="td-mono" style="color:'+
+          (e.dist<20?'#22c55e':e.dist<35?'#c9a84c':'#f5576c')+
+          ';">'+e.dist.toFixed(1)+' km</td>'+
+        '<td style="font-size:0.84rem;">'+e.src+ahead+'</td>'+
+      '</tr>';
+    }).join('');
+    document.getElementById('eq-tbody').innerHTML=html||
+      '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:20px;">Seçilen Mw eşiğine uyan olay bulunamadı.</td></tr>';
+  };
+  document.addEventListener('DOMContentLoaded',window.eqRender);
+  if(document.readyState!=='loading') window.eqRender();
+})();
+</script>
+
+<div class="hb-analysis gold">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">📐</span><h4>Kataloglar Arası Boylamsal Fark: ~50–120 km</h4></div>
+  <p>
+    SHEEC ve Papazachos'un önerdiği Adalar segmenti konumu (~29.1–29.5°E) ile Ambraseys (2002) ve Öncel &amp; Wilson'ın (2006) benimsediği Batı Marmara konumu (~28.3°E) arasında yaklaşık <strong>60–70 km</strong>'lik boylamsal bir fark bulunmaktadır. 40.8°N enleminde bu fark, episantr konumunda <strong>~55–65 km</strong>'lik yatay bir ayrılığa karşılık gelir.
+  </p>
+  <p>
+    Soysal ve Shebalin'in daha kuzeyde (41.0°N) verdiği koordinatlar ise depremi İstanbul Boğazı'na yakın konumlandırmakta; Adalar segmentine kıyasla Marmara'nın en doğu ucuna işaret etmektedir. Sonuç olarak dört farklı çalışma grubu, deprem için <strong>yaklaşık 120 km uzunluğundaki</strong> bir yay boyunca dağılmış episantrlar önermektedir.
+  </p>
+  <p>
+    <strong>Sismik bütçe hesaplamalarına etkisi:</strong> 1766 depremi Adalar segmentine atandığında (Parsons, 2004; SHEEC), o segmentin bugünkü ~3.7 metrelik slip deficit'i bu depremin "son büyük kırılma" olduğu varsayımına dayanmaktadır. Ambraseys'in önerdiği daha batı lokasyonu kabul edildiğinde, Adalar segmentinin slip bütçesi ve dolayısıyla kilitlenme profili farklı bir hesaplamayı zorunlu kılmaktadır.
+  </p>
+</div>
+
+<div class="hb-thinkzone">
+  <span class="hb-thinkzone-lbl">📚 Sismolog Notu — Epistemik Belirsizlik</span>
+  <p>
+    Tarihsel depremler için standart kabul, episantr hata payının <strong>en az 50 km</strong> olduğudur. 1766 depremi, makrosismik hasar verisi sınırlı olmasına rağmen çoğul çalışmaya konu olmuş nadir bir tarihsel olaydır. Bu durum, belirsizliği azaltmak yerine farklı metodolojilerin farklı sonuçlar ürettiğini görünür kılmaktadır. Bilimsel etik açısından doğru tutum: "Episantr bu koordinattadır" değil, "mevcut veriler bu koordinat bandını desteklemektedir" diyebilmektir.
+  </p>
+</div>
+
+<div class="hb-analysis blue">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">🔬</span><h4>Yenihayat (2022) — Stokastik Simülasyon: Orta Marmara Fayı, Mw 7.0–7.1, 5 km Derinlik</h4></div>
+  <p>
+    Boğaziçi Üniversitesi'nden Yenihayat (2022), 1766 depremi için EXSIM12 stokastik sonlu-fay simülasyonu yöntemiyle sistematik bir kaynak parametresi taraması gerçekleştirmiştir. Güvenilirliği 2019 Silivri (Mw 5.8) ve 1999 Kocaeli (Mw 7.4) depremleriyle doğrulanmış sönümlenme modeli, farklı fay senaryolarına uygulanmış; en düşük hata değerini veren sonuçlar belirlenmiştir.
+  </p>
+  <p>
+    Analize göre 1766 depremi, Adalar/Prens Adaları Segmenti'nde (PIS) değil, <strong>Orta Marmara Fayı (CMF — Central Marmara Fault)</strong> üzerinde meydana gelmiştir. Öne çıkan iki senaryo:
+  </p>
+  <ul>
+    <li><strong>S1 — CMF Doğu Ucu:</strong> Episantr ~28.88°E, 40.87°N · Mw 7.0 · 80 km kırılma uzunluğu · gerilme düşümü 240 bar · odak derinliği 5 km</li>
+    <li><strong>S2 — CMF Batı Ucu (S1'den ~40 km batıda):</strong> Episantr ~28.43°E, 40.86°N · Mw 7.1 · 60 km kırılma uzunluğu · gerilme düşümü 210 bar · odak derinliği 5 km</li>
+  </ul>
+  <p>
+    Bu bulgular, Ambraseys (2002) ve Öncel &amp; Wilson (2006)'ın önerdiği <strong>Batı Marmara konumu (~28.3–28.9°E)</strong> ile örtüşmektedir. Buna karşılık, SHEEC'in daha doğuda işaret ettiği Adalar segmenti lokasyonu (~29.5°E) CMF senaryolarıyla bağdaşmamaktadır. Yenihayat (2022), makrosismik şiddet dağılımını yeniden üreten en başarılı senaryoların tutarlı biçimde CMF üzerinde kümeleştiğini saptamıştır (Yenihayat, 2022, Tablo 5.30 &amp; §5.2).
+  </p>
+  <p>
+    Bu sonuçları bağımsız bir görsel kanıt desteklemektedir: Marmara'nın son 20 yüzyıllık sismik etkinliğini gösteren ve büyük olasılıkla Ambraseys &amp; Finkel (1991) ya da Ambraseys (2002) yayınına ait bir akademik haritada (Fig. 3), kırmızı yıldızla işaretlenen 1766 depremi (olay no. 51) İstanbul'un hemen batısında ~28.9°E, 41.0°N'a yerleştirilmiştir. Bu koordinat SHEEC'in 29.463°E lokasyonundan yaklaşık 60 km batıda; Yenihayat (2022) S1 senaryosunun önerdiği 28.88°E ile neredeyse çakışmaktadır. Makrosismik geriye hesaplama, stokastik simülasyon ve bağımsız harita kanıtı olmak üzere üç farklı yöntemin ortak bir coğrafi alana işaret etmesi, batı konumunu destekleyen çok-yöntemli bir konsensüs oluşturmaktadır.
+  </p>
+</div>
+
+<!-- BÖLÜM 02: İKİZ DEPREM -->
+<div class="hb-section-lbl red"><span>02 — 1766'nın İkiz Depremleri: 75 Gün Arayla Marmara'nın İki Ucu</span></div>
+
+<p class="hb-prose">
+  1766 yılı, Marmara Denizi'nin hem doğusunu (22 Mayıs) hem de batısını (5 Ağustos) 75 gün gibi kısa bir süre içinde kıran istisnai bir "deprem yılı" olarak sismoloji tarihine geçmiştir. Nalbant, King ve işbirlikçilerinin Coulomb gerilme analizi çalışmaları, bu iki olayın bağımsız değil, birbirini tetikleyen bir sismik zincirin halkası olduğunu göstermektedir.
+</p>
+
+<div class="hb-two-col">
+  <div class="hb-info-box">
+    <h5>22 Mayıs 1766 — Doğu Depremi</h5>
+    <span class="mono">Mw ~7.1 · Adalar / Orta Marmara</span>
+    <p>Sabah erken saatlerde meydana gelen bu deprem İstanbul'u şiddetle sarstı. Fatih Camii kubbesini yıktı, şehir surlarına hasar verdi, Topkapı Sarayı'nı ve Kapalıçarşı'yı vurdu. Boğaziçi'nde tsunami dalgaları gözlemlendi. Parsons (2004) ve diğer kataloglar bu olayı Adalar segmentine atamaktadır.</p>
+  </div>
+  <div class="hb-info-box">
+    <h5>5 Ağustos 1766 — Batı Depremi</h5>
+    <span class="mono">Mw ~7.6 · Ganos / Gelibolu Segmenti</span>
+    <p>İlk büyük sarsıntıdan tam 75 gün sonra, Marmara'nın batısındaki Ganos fay sistemi kırıldı. 1912 Mürefte depremiyle (Mw 7.4) aynı segment üzerindedir. Bu deprem Mürefte, Gelibolu Yarımadası ve Trakya kıyılarında büyük yıkıma yol açtı. Kataloglar bu lokasyon üzerinde büyük ölçüde mutabıktır: ~26.8–27.0°E boylamı.</p>
+  </div>
+</div>
+
+<div class="hb-analysis purple">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">⛓️</span><h4>Coulomb Stres Transferi ve Tetikleme Zinciri (1719–1766)</h4></div>
+  <p>
+    Nalbant, Hubert-Ferrari, King ve ekibinin (2000) Nature'daki çalışması, KAFZ boyunca ilerleyen deprem dizilerinde komşu segmentlerin birbirini tetiklediğini Coulomb başarısızlık gerilmesi (ΔCFS) hesaplamalarıyla kanıtlamıştır. 18. yüzyıl Marmara sekansı için önerilen tetikleme zinciri şöyledir:
+  </p>
+  <ul>
+    <li><strong>1719 depremi →</strong> doğu-komşu segment üzerindeki ΔCFS artışı</li>
+    <li><strong>1754 depremi →</strong> 22 Mayıs 1766 episantrına yakın bölgede yükleme</li>
+    <li><strong>22 Mayıs 1766 →</strong> Ganos segmenti üzerinde ΔCFS artışı (clock advance ~75 gün)</li>
+    <li><strong>5 Ağustos 1766 →</strong> Ganos segmentinin kırılması</li>
+  </ul>
+  <p>
+    6 Şubat 2023 depremleri ile 1766 ikiz depremleri arasındaki temel fark: 2023'te ikinci büyük deprem (Mw 7.6 Elbistan), birinci depremden 9 saat sonra <em>birincil faydan bağımsız bir ikincil fay segmentinde</em> meydana gelmiştir. 1766'da ise her iki deprem de Kuzey Anadolu Fay Zonu'nun aynı ana hattı üzerindeki iki farklı segmentte gerçekleşmiştir. Bu ayrım, "ikiz deprem" teriminin kapsadığı mekanik süreçlerin ne denli çeşitli olabileceğini göstermektedir.
+  </p>
+</div>
+
+<!-- BÖLÜM 03: TARİHSEL HASAR -->
+<div class="hb-section-lbl"><span>03 — Ambraseys Gözüyle Hasar Envanteri: Yaşayan Sismometreler</span></div>
+
+<p class="hb-prose">
+  Nicholas Ambraseys (2002), modern sismometrelerin olmadığı dönemlerde deprem şiddetini ve episantrını belirlemek için Osmanlı onarım kayıtlarını, kadı sicillerini ve çağdaş seyahatname anlatımlarını birer "ölçüm cihazı" olarak kullandı. Bu yöntem, hasar gören yapının konumunu, hasar derecesini ve akabinde yapılan onarımı bir "geriye dönük sismogram" gibi yorumlama imkânı verir.
+</p>
+
+<div class="hb-tecto-grid">
+  <div class="hb-tecto-zone zone1">
+    <span class="hb-zone-num">I</span>
+    <div class="hb-zone-content">
+      <h5>Fatih Camii (Sultan Mehmed II Külliyesi)</h5>
+      <p>Depremin en dikkat çekici yapısal kaydı: büyük kubbenin ("great cupola") çökmesi. Çağdaş kaynaklar (The Gazette, 1766) "cupola of which likewise fell" ifadesini kullanmaktadır. Külliyedeki medresede 100 öğrenci hayatını kaybetmiştir. Yapının 1509, 1719 ve 1754 depremlerinden birikmiş kümülatif hasarı —ve zeminin zemin büyütmesine açık "kötü zemin" karakteri— 1766 yılında nihai kubbeye çöküşe zemin hazırlamıştır. Cami, depremden 15 ay sonra farklı bir plan şemasıyla (Barok–Klasik) yeniden inşa edilmiştir.</p>
+    </div>
+  </div>
+  <div class="hb-tecto-zone zone2">
+    <span class="hb-zone-num">II</span>
+    <div class="hb-zone-content">
+      <h5>Ayasofya, Topkapı Sarayı &amp; Şehir Surları</h5>
+      <p>Ayasofya ağır hasar almış, ancak kayalık zemin üzerinde konuşlandığı için tamamen yıkılmamıştır. Topkapı Sarayı birçok bölümde ciddi hasar görmüş; Padişah bir süre saray dışında çadırda ikamet etmek zorunda kalmıştır. Beş yüzyıllık Bizans/Osmanlı şehir surlarında da büyük yıkımlar gerçekleşmiştir. Ambraseys (2002), bu hasar verilerinden hareketle İstanbul şehir merkezine Io 8–9 şiddeti atamaktadır.</p>
+    </div>
+  </div>
+  <div class="hb-tecto-zone zone3">
+    <span class="hb-zone-num">III</span>
+    <div class="hb-zone-content">
+      <h5>Tsunami &amp; Kıyı Hasarı</h5>
+      <p>Ambraseys kayıtları, Boğaziçi ve Galata kıyılarında deniz suyunun kabararak liman tesislerini ve kıyı yapılarını hasar gördürdüğünü belgelemektedir. Bu tsunami sinyali, depremin Marmara Denizi tabanındaki fay üzerinde gerçekleştiğini teyit eden dolaylı bir kanıttır; kara yüzeyindeki bir fay kırılması bu büyüklükte bir tsunamiyi üretmez. Osmanlı arşivleri ve dönemin tanıklıklarını inceleyen Timur (2023), tsunaminin boyutunu daha da belirgin biçimde ortaya koymaktadır: <strong>Galata iskelelerinin tamamen sular altında kaldığı</strong>, denizin şiddetle kabararak kıyı mahallelerini bastığı, Marmara adalarının kıyı bölümlerinin yarıya kadar denize gömüldüğü kayıtlara geçmiştir. Mazlum (2011) ise Osmanlı arşivlerinden derlediği onarım belgelerinin büyük bölümünün kıyı yapı hasarlarını kapsadığını saptamış; bu durum tsunami etkisinin geniş bir kıyı şeridini vurduğunu dolaylı olarak teyit etmektedir (Timur, 2023; Mazlum, 2011).</p>
+    </div>
+  </div>
+</div>
+
+<div class="hb-analysis blue">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">⚖️</span><h4>Gazete Haberi mi, Bilimsel Katalog mu? Veri Kalitesi Hiyerarşisi</h4></div>
+  <p>
+    <em>The Gazette</em> (1766), Fatih Camii için "kubbesi düştü" derken ilk şok anını fotoğraflamaktadır. Ambraseys (2002) ise aylar sonraki nihai tabloya bakarak — kümülatif artçı hasarı da dahil ederek — yapıyı daha genel bir "yıkım" kategorisinde değerlendirir. Bu iki anlatı çelişmez; farklı zaman kesitlerini temsil eder.
+  </p>
+  <p>
+    Can kaybı tahminleri ise daha keskin bir ayrışma gösterir: Gazette ilk 880 enkaz ölümünü bildirirken "yabancı baskıların" 10.000–40.000 arasında rakamlar ileri sürdüğünü not etmekte ve spekülatif bir parantez açmaktadır. Parsons (2004) hakem denetimli katalogunda 22 Mayıs depremi için <strong>~5.300</strong> ölümü esas almaktadır. Akademik analizlerde bu hakem denetimli verinin tercih edilmesi, bilimsel metodolojinin temel gereğidir.
+  </p>
+</div>
+
+<!-- BÖLÜM 03b: GAZETe KUPÜRÜ -->
+<div class="hb-section-lbl gold"><span>03b — Birincil Kaynak: 1766 Tarihli İngiliz Gazetesi — "Thursday, May 22"</span></div>
+
+<p class="hb-prose">
+  1766 depremini belgeleyen nadir birincil kaynaklardan biri, "Thursday, May 22" başlıklı bir İngiliz gazetesi kupürüdür. Kimliği tam olarak belirlenemeyen bu gazete (muhtemelen <em>The London Chronicle</em> veya dönemin başka bir özel İngiliz süreli yayını), metin içinde <strong>"Thus far the Gazette"</strong> ifadesiyle <em>The London Gazette</em>'i kaynak göstermekte; ardından yabancı gazetelerin ek haberlerine yer vermektedir. 22 Mayıs 1766'nın takvimde gerçekten Perşembe'ye denk gelmesi, kupürün özgünlüğünü bağımsız olarak doğrulamaktadır.
+</p>
+
+<div class="hb-highlight">
+  <strong>Transkript — "Thursday, May 22" başlıklı İngiliz gazetesi [1766 Yazı]:</strong><br /><br />
+  "Between five and six in the morning was felt at <em>Constantinople</em> a violent shock of an earthquake which lasted something more than a minute. Four royal mosques suffered; the first at the gate of <em>Adrianople</em>, the cupola of which fell, and the walls were damaged; the second, that of Sultan <em>Mahomet II</em>. the cupola of which likewise fell, as did also the public school in which above 100 students perished; the third, that of <em>Mahomet Babaw</em>, which was hurt only in the external part; the fourth, that of Sultan <em>Achmet</em>, a minaret of which fell down. They reckon 273 small mosques and baths, either ruined or damaged. Several chams or inns were destroyed, some palaces of Turks, and many houses. The walls of the city suffered, that 200,000 piastres will scarce repair the damage. About 880 persons have already been found buried under the ruins, besides a great number of maimed and wounded. Great damage was done in the seraglio, and the Grand Signior himself lived some days under tents. Two of the seven towers fell; and the rest were hurt. Some small damage is said to have been done at <em>Adrianople</em>."
+  <br /><br />
+  "Thus far the Gazette. But the foreign prints make the calamity appear still more dreadful. On the 20th of <em>June</em>, they say, a shock happened equal in violence to that of the 22d of May, and totally overthrew many edifices that had been already shattered; this shock was succeeded by another on the 14th, no less alarming, when the Sultan was at the mosque, where the confusion it occasioned was inexpressible. The number of lives lost on all these occasions, is computed by some accounts at 10,000; by others at 40,000 souls, and the terror of those that escaped may be more easily conceived than described."
+</div>
+
+<div class="hb-analysis gold">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">🔍</span><h4>Eleştirel Kaynak Analizi — Bilim İnsanı Titizliğiyle Değerlendirme</h4></div>
+  <p>Bu kupür, akademik literatürle karşılaştırıldığında tutarlılık gösteren ve birincil düzeyde kanıt niteliği taşıyan birçok kritik veri içermektedir:</p>
+  <ul>
+    <li><strong>Saat — "between five and six in the morning":</strong> Yerel 05:00–06:00 → bu çalışmadaki ~05:30 tahminiyle örtüşmektedir.</li>
+    <li><strong>Süre — "lasted something more than a minute":</strong> Mw ~7.1 için yüzey dalgası kayma süresi ~30–50 sn'dir; algı süresi daima daha uzun hissedilir — fiziksel olarak tutarlı.</li>
+    <li><strong>Fatih Camii (Sultan Mahomet II) — "cupola fell, 100 students perished":</strong> Ambraseys (2002), Timur (2023) ve The Gazette ile tam uyum; "100 öğrenci" rakamı üç bağımsız kaynakta tekrar etmektedir.</li>
+    <li><strong>Sultan Ahmed Camii (Sultan Achmet) — "a minaret fell down":</strong> Kubbe değil minare yıkılmış; bu ayrım, Sultan Ahmed'in görece sağlam zemin üzerinde olduğunu ve Fatih bölgesinin zemin büyütmesine daha açık olduğunu desteklemektedir.</li>
+    <li><strong>Yedikule — "two of the seven towers fell":</strong> Bizans/Osmanlı surlarındaki ağır hasarın özgün kaydı; birden fazla akademik çalışmayla örtüşmektedir.</li>
+    <li><strong>Topkapı Sarayı — "Grand Signior himself lived some days under tents":</strong> Padişahın Saray dışına çıkmak zorunda kalması, Osmanlı arşivlerinin de teyit ettiği bir detaydır.</li>
+    <li><strong>İlk kayıp sayısı — "880 persons found buried":</strong> Enkaz altından ilk günlerde çıkarılanların sayısı; Parsons (2004) ~5.300 tahmini bölge genelini ve uzun süreci kapsar — iki rakam çelişmez, farklı zaman ve alan kesitlerini temsil eder.</li>
+    <li><strong>Can kaybı tartışması:</strong> Gazete ~880 (doğrulanmış), yabancı basın 10.000–40.000 (doğrulanmamış), Parsons (2004) ~5.300 (hakem denetimli sentez) — kaynak hiyerarşisi nettir.</li>
+    <li><strong>Sonraki sarsıntılar — "20th of June" ve "the 14th":</strong> Ağustos 5 ana ikiz olayından önce meydana gelen ve ana kataloglarda tam olarak yer almayan ara büyük sarsıntıların bağımsız belgesidir.</li>
+    <li><strong>Adrianople (Edirne) hasarı — "some small damage":</strong> Depremin etki alanının Trakya'ya uzandığını gösteren dolaylı bir mesafe kanıtıdır.</li>
+  </ul>
+  <p><em>Kaynak notu:</em> "Thus far the Gazette" ifadesi, önceki paragrafın <em>The London Gazette</em>'den aktarıldığını, devamının ise yabancı basın haberlerine dayandığını açıkça belirtmektedir. Bu kupür eşzamanlı tanıklık niteliğinde olup yıllar sonra kaleme alınan ikincil anlatılardan epistemik olarak üstündür. Bununla birlikte, çeviride ve kopyalamada hata payı göz ardı edilmemelidir ([Kimliği belirsiz İngiliz gazetesi], 1766).</p>
+</div>
+
+<!-- BÖLÜM 04: KÜMÜLATİF HASAR -->
+<div class="hb-section-lbl gold"><span>04 — Fatih Camii'nin Sismik Kronolojisi: 300 Yıllık Yapısal Yorgunluk</span></div>
+
+<p class="hb-prose">
+  Fatih Camii'nin 1766'daki kubbe çöküşü, o sabahki depremin tek eseri değildi; tam anlamıyla <em>kümülatif bir yapısal yorgunluğun</em> bitiş çizgisiydi. 1462–1469 yılları arasında Sultan II. Mehmed için inşa edilen bu büyük yapı, yaklaşık 300 yılda dört büyük İstanbul depremiyle yüzleşmişti:
+</p>
+
+<div class="hb-timeline">
+  <div class="hb-tl-item">
+    <span class="hb-tl-year">1509</span>
+    <span class="hb-tl-dot red"></span>
+    <div class="hb-tl-content">
+      <h5>Kıyamet-i Sugra — İlk Büyük Darbe</h5>
+      <p>Ana kubbenin yarılması; dört ana sütunun başlarında çatlaklar; demir kirişlerin yerinden çıkıp eğilmesi. Yapı ilk kez ciddi bir taşıyıcı sistem hasarıyla yüzleşti.</p>
+    </div>
+  </div>
+  <div class="hb-tl-item">
+    <span class="hb-tl-year">1719</span>
+    <span class="hb-tl-dot gold"></span>
+    <div class="hb-tl-content">
+      <h5>1509'dan 210 Yıl Sonra — İkinci Yorgunluk Katmanı</h5>
+      <p>Kubbelerde yeni çatlaklar. Kötü zemine çakılan kazıklar ve önceki onarımların üzerine eklenen yüklerle yapı, sismik kapasitesinin sınırlarına yaklaşmaktadır.</p>
+    </div>
+  </div>
+  <div class="hb-tl-item">
+    <span class="hb-tl-year">1754</span>
+    <span class="hb-tl-dot blue"></span>
+    <div class="hb-tl-content">
+      <h5>Küçük Kubbeler Çöktü — Son Uyarı</h5>
+      <p>Tüm küçük kubbeler çöktü; ana yapı ciddi biçimde yoruldu. 12 yıl sonra gelecek son darbeye az kaldı.</p>
+    </div>
+  </div>
+  <div class="hb-tl-item">
+    <span class="hb-tl-year">1766</span>
+    <span class="hb-tl-dot red"></span>
+    <div class="hb-tl-content">
+      <h5>Zelzele-i Azime — Büyük Kubbenin Çöküşü ve Yeniden İnşa</h5>
+      <p>Üç büyük sarsıntıyla önceden "tüketilmiş" taşıyıcı sistem, dördüncü büyük darbede çöktü. Timur (2023), arşiv belgelerine dayanarak yıkım ve yeniden yapım takvimini şöyle ortaya koymaktadır: Caminin duvarları saçak korniş hizasından itibaren <strong>4 Kasım 1766'da yıkılmaya başlandı</strong>; dokuz ay içinde temel atıldı. Yapım süreci <strong>46 ay 10 gün</strong> sürdü (yaklaşık Nisan 1770). Yeni yapı, Barok–Klasik hibrit mimarisiyle kıble yönünde genişletildi. Kötü zeminin ve kümülatif yorgunluğun verdiği ders böylece somut bir mimari dönüşüm kararına dönüştü (Timur, 2023).</p>
+    </div>
+  </div>
+  <div class="hb-tl-item">
+    <span class="hb-tl-year">2026</span>
+    <span class="hb-tl-dot green"></span>
+    <div class="hb-tl-content">
+      <h5>Bugün — Mevcut Yapı Stoğu İçin Bir Ayna</h5>
+      <p>İstanbul'daki binaların %90'ı 2000 yılı öncesine aittir. Fatih Camii gibi her sarsıntıda biraz daha "tüketilen" bu yapılar, kümülatif hasar ve zemin büyütmesi bileşimini 21. yüzyılın sismik riski olarak sürdürmektedir.</p>
+    </div>
+  </div>
+</div>
+
+<div class="hb-highlight">
+  <strong>Sismik Aktör İçin Mesaj:</strong> Yapısal yorgunluk, bir binanın geçmişteki her sarsıntıyı "hafıza" olarak sakladığı bir birikim sürecidir. Bina dışarıdan sağlam görünse de, her deprem görünmez bir mikro hasar katmanı ekler. Fatih Camii 300 yıl direndi; ancak 1766'da değil, zaten "tükenmiş" bir noktada çöktü.
+</div>
+
+<!-- BÖLÜM 05: ADLİ SİSMOLOJİ -->
+<div class="hb-section-lbl"><span>05 — P/S Genlik Oranı: Adli Sismolojinin Tarihsel Kökeni</span></div>
+
+<p class="hb-prose">
+  1766 depremi sismometre kayıt etmemişti; dolayısıyla P ve S dalgası amplitüdleri karşılaştırılamaz. Ancak tarihsel sismoloji, bu deprem için büyüklük ve mekanizma tayinini dolaylı yollarla yapar. Bugün ise adli sismoloji, P/S genlik oranı ve spektral içerik kullanarak bir sarsıntının doğal bir fay kırılması mı yoksa yapay bir patlama mı olduğunu yüksek doğrulukla belirleyebilmektedir.
+</p>
+
+<div class="hb-geo-grid">
+  <div class="hb-geo-card">
+    <span class="hb-geo-icon">📈</span>
+    <h4>Doğal Deprem</h4>
+    <p>Makaslama (shear failure) mekanizması S dalgasına enerji aktarır. Sismogramda: <strong>küçük P genliği + büyük S genliği.</strong> 1766 Zelzele-i Azime'nin de bu karakterde olduğu kabul edilir.</p>
+  </div>
+  <div class="hb-geo-card">
+    <span class="hb-geo-icon">💥</span>
+    <h4>Yapay Patlama</h4>
+    <p>Noktasal basınç kaynağı (point source) P dalgasına yoğun enerji verir. Sismogramda: <strong>büyük P genliği + küçük S genliği.</strong> Nükleer testlerin tespitinde kullanılan temel imza budur.</p>
+  </div>
+  <div class="hb-geo-card">
+    <span class="hb-geo-icon">🔍</span>
+    <h4>P Dalgası — İyilik Çağrısı</h4>
+    <p>P dalgasının küçük genliği yapıyı yıkmaz; sadece uyarır. Bu "fırsat penceresi" — Güngören için 8–15 saniye — Sismik Aktörün eylem alanıdır.</p>
+  </div>
+</div>
+
+<!-- BÖLÜM 06: SİSMİK BORÇ -->
+<div class="hb-section-lbl red"><span>06 — 260 Yıllık Sismik Borç: 3.7 Metrenin Fiziksel Karşılığı</span></div>
+
+<p class="hb-prose">
+  Ergintav ve arkadaşları (2014), GPS hız vektörleri kullanarak Adalar (Princes' Islands) segmentinde 1766'dan bu yana yaklaşık <strong>3.7 metrelik bir kayma açığı (slip deficit)</strong> biriktiğini hesaplamıştır. Bu, fayın kilitlendiği için yapmaktan "ertelendiği" hareketi temsil eder.
+</p>
+
+<div class="hb-analysis red">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">⚠️</span><h4>3.7 Metrenin Büyüklük Karşılığı ve Belirsizlik Bandı</h4></div>
+  <p>
+    Sismolojik kıyaslamalar, 3.7 metrelik bir kaymanın geniş ve tek parça bir segment üzerinde boşalması durumunda <strong>Mw 7.2–7.5</strong> mertebesinde bir deprem üretebileceğini göstermektedir. Ancak bu hesaplama doğrusal değil olasılıksal bir değerlendirmedir: nihai büyüklük kırılmanın uzaysal yayılımına, ortalama kaymaya ve segmentin gerçek kilitlenme profiline bağlıdır.
+  </p>
+  <p>
+    Ek belirsizlik: Orta Marmara Fayı (CMF) üzerindeki sismik sessizliğin kısmi sürünmeden (aseismik creep) mi yoksa kilitlenmeden mi kaynaklandığı henüz netlik kazanmamıştır. Yavaş kayma olayları (SSE) bu borcu "taksit taksit" ödeyebilir; bu senaryo, büyük bir depremin yerine küçük-orta büyüklükte olaylar dizisine karşılık gelir.
+  </p>
+  <p>
+    Zhu ve Zhang'ın AGU 2024 simülasyonları (300.000 yıllık model), büyük depremlerin yineleme aralıklarında <strong>2.5 kata varan düzensizlik</strong> olduğunu kanıtlamıştır. Doğa deterministik değil, olasılıksal çalışır.
+  </p>
+</div>
+
+<div class="hb-prox">
+  <div class="hb-prox-head"><span style="font-size: 1rem;">📍</span><h5>1766 Depremi — Yakın Yerleşim Merkezleri ve Mesafeler</h5></div>
+  <div class="hb-prox-grid">
+    <div class="hb-prox-item"><span class="prox-place">İstanbul şehir merkezi (Fatih)</span><span class="prox-dist">~10–20 km KB</span></div>
+    <div class="hb-prox-item"><span class="prox-place">Adalar (Prinkipo / Büyükada)</span><span class="prox-dist">~5–15 km G (Parsons lok.)</span></div>
+    <div class="hb-prox-item"><span class="prox-place">Boğaziçi / Galata Kıyısı</span><span class="prox-dist">~15–25 km KB</span></div>
+    <div class="hb-prox-item"><span class="prox-place">Kadıköy / Üsküdar</span><span class="prox-dist">~15–20 km KB</span></div>
+    <div class="hb-prox-item"><span class="prox-place">İzmit (Nikomedia)</span><span class="prox-dist">~80 km D (SHEEC lok.)</span></div>
+    <div class="hb-prox-item"><span class="prox-place">Bursa</span><span class="prox-dist">~120–140 km GD</span></div>
+  </div>
+</div>
+
+<!-- BÖLÜM 07: SHIMAZAKI & NAKATA -->
+<div class="hb-section-lbl gold"><span>07 — Shimazaki ve Nakata (1980) Modeli: Marmara'ya Uyarlanabilirlik Sınırları</span></div>
+
+<p class="hb-prose">
+  Shimazaki ve Nakata (1980), Japonya'daki dalma-batma zonlarında (thrust faulting) zaman-öngörülü (time-predictable) ve kayma-öngörülü (slip-predictable) tekrarlanma modellerini geliştirmiştir. Bu modeller, bir sonraki büyük depremi sismik birikim ve geçmiş depremler üzerinden tahmin etmeyi amaçlar. Ancak Marmara için uygulamada kritik bir sınır vardır:
+</p>
+
+<div class="hb-two-col">
+  <div class="hb-info-box">
+    <h5>Model Kökeni — Dalma-Batma Zonu</h5>
+    <p>Shimazaki modeli, Japonya'daki dikey yükselme verilerinden türetilmiştir. Marmara ise bir yanal atım (strike-slip) sistemidir; levhalar birbirinin altına dalmaz, yan yana kayar. Bu fark, enerji birikim mekanizmasının görsel temsilini doğrudan etkiler: trampolin ve yay yerine makaslama ve lastik gerilmesi analojileri daha isabetlidir.</p>
+  </div>
+  <div class="hb-info-box">
+    <h5>Kavramsal Çerçeve Olarak Değeri</h5>
+    <p>Model Marmara için doğrudan bir "tahmin aracı" olmaktan çok kavramsal bir simülasyon sunar. 1766 depremi bu modelin "saat sıfırı" olarak alındığı hesaplamalarda, 260 yıllık birikim Mw 7+ potansiyelini destekler. Ancak Marmara'nın karmaşık segmentasyon yapısı ve aseismik sürünme belirsizliği, deterministik bir tahmin yapmayı fiziksel olarak kısıtlar.</p>
+  </div>
+</div>
+
+<!-- BÖLÜM 08: OSMANLIDAN GÜNÜMÜZE -->
+<div class="hb-section-lbl"><span>08 — Osmanlı Arşivleri: Onarım Politikası ve Sismik Yönetişim</span></div>
+
+<p class="hb-prose">
+  Mazlum (2011), Boğaziçi Üniversitesi'ne sunduğu çalışmasında 1766 depremi sonrası Osmanlı'nın onarım hiyerarşisini ortaya koymuştur. Bulgular, günümüz afet yönetimi paradigmalarıyla karşılaştırıldığında hem öğretici hem de düşündürücüdür.
+</p>
+
+<div class="hb-edu-steps">
+  <div class="hb-edu-step">
+    <span class="hb-edu-num">🏭</span>
+    <div>
+      <h5>İlk Öncelik: Fonksiyonel Yapılar</h5>
+      <p>Su değirmenleri, otluk ambarları, ahırlar ve saraya yoğurt üreten ocaklar ilk yıl içinde öncelikli olarak onarıldı. Üretim ve lojistik altyapısı, simgesel yapıların önünde tutuldu.</p>
+    </div>
+  </div>
+  <div class="hb-edu-step">
+    <span class="hb-edu-num">🕌</span>
+    <div>
+      <h5>Fatih Camii: 15 Ay — Yeniden İnşa</h5>
+      <p>Hasar tamiri değil, yapının tamamen yıkılıp farklı bir planla yeniden inşası tercih edildi. Bu, 18. yüzyılda alınmış nadir bir "sismik dönüşüm" kararıdır.</p>
+    </div>
+  </div>
+  <div class="hb-edu-step">
+    <span class="hb-edu-num">⏳</span>
+    <div>
+      <h5>Eyüp Camii: 34 Yıl — Gecikmiş Dönüşüm</h5>
+      <p>Aynı depremde büyük zarar gören Eyüp Camii, onarım öncelik sıralamasında geride kaldı ve yeniden yapımı 34 yıl gecikti. Afet yönetiminde kaynak kısıtlılığı ve öncelik belirsizliğinin somut bir örneği.</p>
+    </div>
+  </div>
+  <div class="hb-edu-step">
+    <span class="hb-edu-num">📜</span>
+    <div>
+      <h5>"Vaz-ı Kadim Üzere" — Eskisi Gibi Politikası</h5>
+      <p>Genel eğilim: Lizbon (1755) gibi köklü bir şehir yenileme yerine, yıkılan yapıları "eskisi gibi" yeniden yapmak. Bu tutum, riskli dokunun ve zayıf zemin alanlarının olduğu gibi korunmasına yol açtı.</p>
+    </div>
+  </div>
+  <div class="hb-edu-step">
+    <span class="hb-edu-num">🙏</span>
+    <div>
+      <h5>"Biemrillahi Teala" — Kaderciliğin Sismik Kısıtı</h5>
+      <p>Arşiv belgelerindeki "Allah'ın emriyle vuku bulan" tanımlamaları, depremi "baş edilemez bir yazgı" olarak kodlamıştır. Bu algı, güvenli yapım sistemlerinin araştırılmasını geciktiren bir zihinsel engele dönüşmüştür.</p>
+    </div>
+  </div>
+</div>
+
+<div class="hb-thinkzone2">
+  <span class="hb-thinkzone2-lbl">💡 Tarihten Günümüze Köprü</span>
+  <p>
+    1766 sonrası Osmanlı'nın "vaz-ı kadim üzere" tutumu ile 21. yüzyılın Alfa kuşağı bina yaklaşımı (TBDY 2018 — noktasal PSHA tabanlı tasarım) arasındaki fark, sadece bir mühendislik devrimini değil, <em>afete karşı ahlaki tutumun dönüşümünü</em> de temsil eder. Hazırlıksızlık artık bir kader değil; tercih olarak değerlendirilmektedir.
+  </p>
+</div>
+
+<!-- BÖLÜM 08b: OSMANLI DEPREM ALGISI -->
+<div class="hb-section-lbl red"><span>08b — Osmanlı'nın Deprem Algısı: İlahi Ceza, Şiir ve Toplumsal Refleks</span></div>
+
+<p class="hb-prose">
+  Timur (2023), Eskişehir Osmangazi Üniversitesi'ne sunduğu yüksek lisans tezinde 1766 depremini yalnızca yapısal hasar ve onarım belgesi üzerinden değil; dönemin toplumsal algısı ve kültürel tepkisi açısından da incelemiştir. Bu boyut, depremi anlamanın —ve önlemlerin neden bu kadar geç ve sınırlı kaldığını kavramanın— ayrılmaz bir parçasıdır.
+</p>
+
+<div class="hb-analysis purple">
+  <div class="hb-analysis-head"><span class="hb-analysis-icon">🕌</span><h4>"İlahi Ceza" Algısı — Depremi Yorumlamanın Osmanlı Çerçevesi</h4></div>
+  <p>
+    18. yüzyıl Osmanlı toplumunda depremler, doğal bir fiziksel süreç olarak değil, <strong>ilahi bir ceza ya da uyarı</strong> olarak yorumlanıyordu. Timur (2023), dönem kaynaklarının depreme yaklaşımını "Allah'ın toplumun ahlaki bozulmasına verdiği yanıt" biçiminde çerçevelediğini saptamaktadır. Bu yorum, gündelik dilde "felek bize bunu yaşattı" ya da "bu belayı bulduk" ifadeleriyle yansımaktaydı.
+  </p>
+  <p>
+    Söz konusu algının pratik sonucu kritikti: Deprem "ilahi bir yazgı" olarak kodlandığında, <em>yapısal önlem almak</em> yerine <em>dua etmek ve tevbe etmek</em> birincil tepkiye dönüşüyordu. Onarım politikasındaki "vaz-ı kadim üzere" (eskisi gibi yap) tutumu, bu zihinsel çerçeveyle örtüşmektedir: eğer felaket Allah'tan geliyorsa, yapıyı değiştirmenin anlamı yoktur (Timur, 2023).
+  </p>
+</div>
+
+<div class="hb-personal-note">
+  <span class="pn-label">📜 Dönem Tanıklığı — Minas Ceranyan'ın Şiiri (1766)</span>
+  <p>
+    İstanbul'un Ermeni topluluğundan şair Minas Ceranyan, 1766 depremini toplumsal bir günah muhasebesine dönüştüren bir şiir kaleme aldı. Timur'un (2023) aktardığı dizelerde şehrin uğradığı yıkım, ahlaki bozulmanın kaçınılmaz bedeli olarak sunulur: "Âlem küfre, zinaya düştü / Helal haram birbirine karıştı / [...] Ondan bu kazayı buldu İstanbul..." Ceranyan'ın ifadelerindeki "kaza" sözcüğü hem "başa gelen bela" hem de "Allah'ın hükmü" anlamını taşımakta; depremi bireysel ve toplumsal suçun doğal karşılığı olarak konumlandırmaktadır.
+  </p>
+  <p>
+    Benzer bir yorum çizgisi, dönemin Osmanlı tarihçisi Şemdanizade'nin kayıtlarında da izlenebilir; deprem üzerine yapılan yorum, sismik aktiviteyi ahlaki-dinî bir hesaplaşma zeminine taşımaktadır (Timur, 2023).
+  </p>
+</div>
+
+<div class="hb-thinkzone">
+  <span class="hb-thinkzone-lbl">🔍 Sismolog Notu — Algı ile Önlem Arasındaki Boşluk</span>
+  <p>
+    Depremi "ilahi ceza" olarak yorumlamak ile onu "fiziksel bir yer kabuğu sürecinin sonucu" olarak kavramak arasındaki fark, yalnızca teolojik değil; aynı zamanda pratik ve hayat kurtarıcıdır. 1766 sonrası Osmanlı'da "vaz-ı kadim" inşaat politikasının sürmesi ile Lizbon'un (1755) depremi akabinde Pombal'ın hayata geçirdiği sistemik kentsel yenileme arasındaki tezat, bu farkın somut bir tarihsel ifadesidir. Mühendislik çözümleri ancak depremin bir doğa olayı —ve önlenebilir bir risk— olarak algılanmasıyla geliştirilebilir.
+  </p>
+</div>
+
+<!-- BÖLÜM 09: SİSMİK AKTÖR -->
+<div class="hb-section-lbl gold"><span>09 — 260. Yılda Sismik Aktör: Bilgi, Davranış, Kolektif Refleks</span></div>
+
+<div class="hb-risk-alert">
+  <span class="hb-risk-icon">🏙️</span>
+  <div class="hb-risk-content">
+    <h5>Güngören Senaryosu (Mw 7.5) — Marmara'nın Sismik Borcu Boşalırsa</h5>
+    <p>İBB (2020) Güngören olası deprem kayıp tahminlerine göre Mw 7.5 büyüklüğünde bir Marmara depremi için öngörüler:</p>
+    <ul>
+      <li>~3.360 bina ağır/çok ağır hasar</li>
+      <li>~82.000 kişi acil barınma ihtiyacı</li>
+      <li>Güngören'deki yapıların %90'ı 2000 öncesi (X ve Y kuşağı)</li>
+      <li>Düşük Vs30 (150–300 m/s) — zemin büyütmesi riski yüksek</li>
+    </ul>
+    <p>1766'da 500 bin olan İstanbul nüfusu bugün 16 milyona ulaşmıştır. Aynı büyüklükteki bir deprem 260 yıl sonra çok daha büyük bir kalabalığı etkileyecektir.</p>
+  </div>
+</div>
+
+<div class="hb-personal-note">
+  <span class="pn-label">🔬 Sismolog Notu — Prof. Dr. Ali Osman Öncel</span>
+  <p>
+    1766 depremini bugün anmak, yalnızca tarihsel bir anma töreni değildir. Adalar segmentinin o günden beri biriktirdiği ~3.7 metrelik sismik borç, Ergintav vd. (2014) GPS verileriyle bugün de devam etmektedir. Episantrın tam yeri Ambraseys ve Parsons arasında tartışmalı olmayı sürdürüyor; ancak her iki senaryo da Marmara'nın büyük bir depreme hazır olduğunu gösteriyor. Belirsizlik, hareketsizlik için bir gerekçe değil; geniş alanlı hazırlık için bir çağrıdır.
+  </p>
+</div>
+
+<hr class="hb-divider" />
+
+<!-- KAYNAKÇA -->
+<div class="hb-section-lbl"><span>10 — Kaynakça (APA 7)</span></div>
+
+<div class="ap-wrap">
+  <div class="ap-block ap-gold">
+    <h4>Temel Tarihsel ve Sismolojik Kaynaklar</h4>
+    <ul>
+      <li>Ambraseys, N. N. (2002). The seismic activity of the Marmara Sea region over the last 2000 years. <em>Bulletin of the Seismological Society of America, 92</em>(1), 1–18.</li>
+      <li>Ambraseys, N. N., &amp; Finkel, C. (1991). Long-term seismicity of Istanbul and the Marmara sea region. <em>Terra Nova, 3</em>, 527–539.</li>
+      <li>Ambraseys, N. N., &amp; Finkel, C. (1995). <em>The seismicity of Turkey and adjacent areas: A historical review, 1500–1800.</em> Muhittin Salih Eren.</li>
+      <li>Parsons, T. (2004). Recalculated probability of M ≥ 7 earthquakes beneath the Sea of Marmara, Turkey. <em>Journal of Geophysical Research: Solid Earth, 109</em>(B5), B05304. https://doi.org/10.1029/2003JB002667</li>
+      <li>Mazlum, D. (2011). <em>XVIII. yüzyılın ikinci yarısında Marmara Bölgesinde depremler ve 22 Mayıs 1766 İstanbul depremi: Osmanlı arşiv belgeleri ışığında yapı onarımları.</em> [Yayımlanmış doktora tezi, İstanbul Teknik Üniversitesi].</li>
+      <li>Timur, E. (2023). <em>XVIII. yüzyılın ikinci yarısında Marmara bölgesinde depremler</em> [Yayımlanmış yüksek lisans tezi, Eskişehir Osmangazi Üniversitesi Sosyal Bilimler Enstitüsü]. Danışman: Prof. Dr. Kamil Çolak.</li>
+    </ul>
+  </div>
+  <div class="ap-block ap-blue">
+    <h4>GPS, Sismik Bütçe ve Risk Analizi</h4>
+    <ul>
+      <li>Ergintav, S., Reilinger, R. E., Çakmak, R., Floyd, M., Cakir, Z., Doğan, U., King, R. W., McClusky, S., &amp; Özener, H. (2014). Istanbul's earthquake hot spots: Geodetic constraints on strain accumulation along faults in the Marmara seismic gap. <em>Geophysical Research Letters, 41</em>(16), 5783–5788. https://doi.org/10.1002/2014GL060985</li>
+      <li>Shimazaki, K., &amp; Nakata, T. (1980). Time-predictable recurrence model for large earthquakes. <em>Geophysical Research Letters, 7</em>(4), 279–282. https://doi.org/10.1029/GL007i004p00279</li>
+      <li>Hubert-Ferrari, A., Barka, A., Jaques, E., Nalbant, S. S., Meyer, B., Armijo, R., Tapponnier, P., &amp; King, G. C. P. (2000). Seismic hazard in the Marmara Sea region following the 17 August 1999 İzmit earthquake. <em>Nature, 404</em>, 269–273.</li>
+      <li>İstanbul Büyükşehir Belediyesi (2020). <em>İstanbul ili Güngören ilçesi olası deprem kayıp tahminleri kitapçığı.</em> Deprem Risk Yönetimi ve Kentsel İyileştirme Daire Başkanlığı.</li>
+    </ul>
+  </div>
+  <div class="ap-block ap-red">
+    <h4>Kataloglar ve Tarihsel Sismoloji</h4>
+    <ul>
+      <li>Papazachos, B. C., &amp; Papazachou, C. B. (2003). <em>The earthquakes of Greece</em> (3. bs.). Ziti Publications.</li>
+      <li>Soysal, H., Sipahioğlu, S., Kolçak, D., &amp; Altınok, Y. (1981). <em>Türkiye ve çevresinin tarihsel deprem kataloğu (M.Ö. 2100 – M.S. 1900).</em> TÜBİTAK Yayınları.</li>
+      <li>Yenihayat, N. (2022). <em>Constraining source properties of the 1509, 1766 and 1894 Istanbul earthquakes</em> [Yayımlanmış doktora tezi, Boğaziçi Üniversitesi Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü].</li>
+      <li>Öncel, A. O., &amp; Wilson, T. (2006). Evaluation of earthquake potential along the Northern Anatolian Fault Zone in the Marmara Sea using comparisons of GPS strain and seismotectonic parameters. <em>Tectonophysics, 418</em>(3–4), 205–218. https://doi.org/10.1016/j.tecto.2006.02.006</li>
+      <li>Öncel, A. O. (2024). A scientific perspective on goodness: From P-waves to collective reflexes in disaster science. <em>Pratik Boyut,</em> 95–128.</li>
+    </ul>
+  </div>
+  <div class="ap-block ap-gold">
+    <h4>Birincil Arşiv Kaynakları — Çağdaş Basın</h4>
+    <ul>
+      <li>[Kimliği belirsiz İngiliz gazetesi]. (1766, Yaz). [Konstantinopolis depremi haberi; "Thursday, May 22" tarih başlıklı]. <em>Yayın adı belirlenememiştir</em>. Not: Kupür metni "Thus far the Gazette" ifadesiyle <em>The London Gazette</em>'i kaynak göstermekte; ardından yabancı basın haberlerine yer vermektedir. 22 Mayıs 1766'nın Perşembe olması özgünlüğü teyit etmektedir. [Dijital arşiv kopyası incelenmiştir.]</li>
+      <li>Harita [Fig. 3 — Marmara bölgesi son 20 yüzyıllık sismik etkinlik]. Kaynak: Ambraseys, N. N., &amp; Finkel, C. (1991) veya Ambraseys, N. N. (2002) [kesin makale kimliği, masthead görüntüsü olmaksızın doğrulanamamıştır; her iki yayın da kaynakçada mevcuttur]. 1766 depremi (olay no. 51) ~28.9°E, 41.0°N'a yerleştirilmiştir.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="hb-final">
+  <h2>
+    260 Yıl Önce Bugün:<br />
+    <span class="hl-gold">Zelzele-i Azime Hâlâ Konuşuyor</span>
+  </h2>
+  <p class="hb-final-sub">
+    1766 depremi sismik bir "saat" kurdu. 260 yıl sonra, yerin altında ~3.7 metrelik birikmiş enerji "tahsil edilmeyi" bekliyor. Episantrın tam yeri tartışmalı, büyüklük belirsizlik bandı geniş — ama tüm senaryolar tek bir gerçeğe işaret ediyor: hazırlıksızlık artık bir kader değil, bir tercih meselesidir.
+  </p>
+  <div class="hb-pillars">
+    <span class="hb-pillar">Sismik Bütçe Gerçektir</span>
+    <span class="hb-pillar">Doğa Olasılıksal Çalışır</span>
+    <span class="hb-pillar">Epistemik Belirsizliği Yönet</span>
+    <span class="hb-pillar">Alfa Kuşağı Binalara Geçiş</span>
+    <span class="hb-pillar">P Dalgası İyilik Çağrısı</span>
+    <span class="hb-pillar">Sismik Aktör Ol</span>
+    <span class="hb-pillar">Kolektif Refleks</span>
+  </div>
+</div>
+
+</div><!-- /.hb-inner -->
+
+<!-- FOOTER -->
+<div class="hb-footer">
+  <strong>SeismoReport · 22 Mayıs 1766 Zelzele-i Azime · 260. Yıl Dönümü Analizi</strong><br />
+  Yazar: <em>Prof. Dr. Ali Osman Öncel</em> · İstanbul Üniversitesi-Cerrahpaşa · Jeofizik Mühendisliği<br />
+  Rapor Tarihi: 22 Mayıs 2026 · Kaynak: Ambraseys (2002), Parsons (2004), Ergintav vd. (2014), Yenihayat (2022), Mazlum (2011), Timur (2023)<br />
+  Bu sayfa akademik referans amaçlıdır. Katalog büyüklük ve lokasyon değerleri farklı çalışmalar arasında değişkenlik göstermektedir.
+</div>
+
+</div><!-- /.hb-wrap -->
+</body>
+</html>
