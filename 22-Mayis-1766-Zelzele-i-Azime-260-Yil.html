@@ -160,7 +160,7 @@ body{
 .hb-analysis p{font-size:0.95rem;color:var(--soft);line-height:1.85;margin-bottom:8px;text-align:justify;}
 .hb-analysis p:last-child{margin-bottom:0;}
 .hb-analysis ul{padding-left:20px;margin-top:8px;}
-.hb-analysis li{font-size:0.93rem;color:var(--soft);line-height:1.8;margin-bottom:6px;}
+.hb-analysis li{font-size:0.93rem;color:var(--soft);line-height:1.8;margin-bottom:6px;text-align:justify;}
 
 /* ── COMPARISON TABLE ── */
 .hb-table-wrap{overflow-x:auto;margin:20px 0;border-radius:12px;border:1px solid var(--border);}
@@ -212,7 +212,16 @@ tbody tr:last-child td{border-bottom:none;}
 .hb-edu-step p{font-size:0.92rem;color:var(--soft);line-height:1.75;text-align:justify;}
 
 /* ── HIGHLIGHT ── */
-.hb-highlight{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(59,158,255,0.06));border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 22px;margin:20px 0;font-size:0.98rem;color:#d4c09a;line-height:1.9;}
+.hb-highlight{background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(59,158,255,0.06));border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 22px;margin:20px 0;font-size:0.98rem;color:#d4c09a;line-height:1.9;text-align:justify;}
+
+/* ── ACCORDION ── */
+.hb-accordion{margin:16px 0;}
+.hb-accordion>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 20px;background:linear-gradient(135deg,rgba(201,168,76,0.13),rgba(201,168,76,0.04));border:1px solid rgba(201,168,76,0.32);border-radius:10px;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);user-select:none;transition:background 0.2s;}
+.hb-accordion>summary::-webkit-details-marker{display:none;}
+.hb-accordion>summary::before{content:'▶';font-size:0.62rem;flex-shrink:0;transition:transform 0.22s ease;}
+.hb-accordion[open]>summary::before{transform:rotate(90deg);}
+.hb-accordion>summary:hover{background:linear-gradient(135deg,rgba(201,168,76,0.2),rgba(201,168,76,0.08));}
+.hb-accordion-body{padding:4px 0 0;}
 
 /* ── TECTONIC ZONES ── */
 .hb-tecto-grid{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
@@ -904,6 +913,10 @@ tbody tr:last-child td{border-bottom:none;}
   1766 depremini belgeleyen nadir birincil kaynaklardan biri, "Thursday, May 22" başlıklı bir İngiliz gazetesi kupürüdür. Kimliği tam olarak belirlenemeyen bu gazete (muhtemelen <em>The London Chronicle</em> veya dönemin başka bir özel İngiliz süreli yayını), metin içinde <strong>"Thus far the Gazette"</strong> ifadesiyle <em>The London Gazette</em>'i kaynak göstermekte; ardından yabancı gazetelerin ek haberlerine yer vermektedir. 22 Mayıs 1766'nın takvimde gerçekten Perşembe'ye denk gelmesi, kupürün özgünlüğünü bağımsız olarak doğrulamaktadır.
 </p>
 
+<details class="hb-accordion">
+<summary>📜 Transkript + Eleştirel Kaynak Analizi — "Thursday, May 22" [1766] &nbsp;·&nbsp; Okumak için tıkla</summary>
+<div class="hb-accordion-body">
+
 <div class="hb-highlight">
   <strong>Transkript — "Thursday, May 22" başlıklı İngiliz gazetesi [1766 Yazı]:</strong><br /><br />
   "Between five and six in the morning was felt at <em>Constantinople</em> a violent shock of an earthquake which lasted something more than a minute. Four royal mosques suffered; the first at the gate of <em>Adrianople</em>, the cupola of which fell, and the walls were damaged; the second, that of Sultan <em>Mahomet II</em>. the cupola of which likewise fell, as did also the public school in which above 100 students perished; the third, that of <em>Mahomet Babaw</em>, which was hurt only in the external part; the fourth, that of Sultan <em>Achmet</em>, a minaret of which fell down. They reckon 273 small mosques and baths, either ruined or damaged. Several chams or inns were destroyed, some palaces of Turks, and many houses. The walls of the city suffered, that 200,000 piastres will scarce repair the damage. About 880 persons have already been found buried under the ruins, besides a great number of maimed and wounded. Great damage was done in the seraglio, and the Grand Signior himself lived some days under tents. Two of the seven towers fell; and the rest were hurt. Some small damage is said to have been done at <em>Adrianople</em>."
@@ -928,6 +941,9 @@ tbody tr:last-child td{border-bottom:none;}
   </ul>
   <p><em>Kaynak notu:</em> "Thus far the Gazette" ifadesi, önceki paragrafın <em>The London Gazette</em>'den aktarıldığını, devamının ise yabancı basın haberlerine dayandığını açıkça belirtmektedir. Bu kupür eşzamanlı tanıklık niteliğinde olup yıllar sonra kaleme alınan ikincil anlatılardan epistemik olarak üstündür. Bununla birlikte, çeviride ve kopyalamada hata payı göz ardı edilmemelidir ([Kimliği belirsiz İngiliz gazetesi], 1766).</p>
 </div>
+
+</div><!-- /hb-accordion-body -->
+</details>
 
 <!-- BÖLÜM 04: KÜMÜLATİF HASAR -->
 <div class="hb-section-lbl gold"><span>04 — Fatih Camii'nin Sismik Kronolojisi: 300 Yıllık Yapısal Yorgunluk</span></div>
