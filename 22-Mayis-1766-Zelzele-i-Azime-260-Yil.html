@@ -169,7 +169,7 @@ thead th{background:var(--panel3);color:var(--blue);font-size:0.64rem;font-weigh
 tbody td{padding:11px 16px;font-size:0.88rem;color:var(--text);border-bottom:1px solid var(--border);line-height:1.5;font-family:'Crimson Pro',serif;}
 tbody td:first-child{white-space:nowrap;}
 tbody tr:last-child td{border-bottom:none;}
-.td-mono{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--gold-light);}
+.td-mono{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--gold-light);white-space:nowrap;}
 .td-note{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);}
 
 /* ── PROX TABLE ── */
@@ -762,14 +762,14 @@ tbody tr:last-child td{border-bottom:none;}
       var ahead=e.ref?'<a href="https://emidius.eu/AHEAD/event/17660522_0000_000" target="_blank" style="color:#3b9eff;font-size:0.72rem;margin-left:4px;">↗ AHEAD</a>':'';
       return '<tr style="'+rs+'">'+
         '<td style="font-family:\'JetBrains Mono\',monospace;font-size:0.83rem;">'+e.date+'</td>'+
-        '<td>'+e.name+'</td>'+
+        '<td style="white-space:nowrap;">'+e.name+'</td>'+
         '<td class="td-mono">'+e.lat.toFixed(3)+'°N · '+e.lon.toFixed(3)+'°E</td>'+
         '<td class="td-mono" style="color:'+mc+';font-weight:700;">'+e.mw.toFixed(2)+'</td>'+
         '<td class="td-mono">'+io+'</td>'+
         '<td class="td-mono" style="color:'+
           (e.dist<20?'#22c55e':e.dist<35?'#c9a84c':'#f5576c')+
           ';">'+e.dist.toFixed(1)+' km</td>'+
-        '<td style="font-size:0.84rem;">'+e.src+ahead+'</td>'+
+        '<td style="font-size:0.84rem;white-space:nowrap;">'+e.src+ahead+'</td>'+
       '</tr>';
     }).join('');
     document.getElementById('eq-tbody').innerHTML=html||
