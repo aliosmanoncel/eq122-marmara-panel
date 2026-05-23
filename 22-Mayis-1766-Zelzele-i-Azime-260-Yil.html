@@ -1591,7 +1591,7 @@ async function imgToBase64(url) {
 }
 
 function stripEmoji(s) {
-  return (s || '').replace(/[\u{1F300}-\u{1FFFF}]/gu,'').replace(/[☀-➿]/g,'').replace(/^\s*[•·▸►▼▶–—]\s*/u,'').trim();
+  return (s || '').replace(/[\u{1F300}-\u{1FFFF}]/gu,'').replace(/[\u2600-\u27BF]/g,'').replace(/^\s*[•·▸►▼▶–—]\s*/u,'').trim();
 }
 
 // ── İÇERİK TOPLAYICI ────────────────────────────────────────────────────────
