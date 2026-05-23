@@ -1596,178 +1596,89 @@ function stripEmoji(s) {
 
 // ── İÇERİK TOPLAYICI ────────────────────────────────────────────────────────
 async function build1766Body() {
-  // Tüm accordion <details> öğelerini aç — kapalıyken innerText sadece summary'yi verir
+  // 1. Tüm accordion <details> öğelerini aç
   document.querySelectorAll('details.hb-accordion').forEach(d => { d.open = true; });
+  // 2. Tarayıcının layout'u güncellemesi için kısa bekleme
+  await new Promise(r => setTimeout(r, 250));
 
   let html = '';
   const seen = new Set();
 
-  // ── Şekil görselleri (apa-fig-wrap) ──────────────────────────────────────
-  const figBlocks = Array.from(document.querySelectorAll('.apa-fig-wrap'));
-  if (figBlocks.length > 0) {
-    html += '<h2 class="before-table">Şekiller</h2>\n';
-    let figIdx = 0;
-    for (const block of figBlocks) {
-      const img = block.querySelector('img[src]:not([src=""])');
-      if (!img) continue;
-      const src = img.getAttribute('src') || '';
-      if (!src.startsWith('http')) continue;
-      figIdx++;
-      const capEl = block.querySelector('.apa-fig-caption');
-      const caption = capEl ? capEl.innerText.trim() : (img.getAttribute('alt') || '');
-      const b64 = await imgToBase64(src);
-      html += '<p style="column-span:all;text-align:center;margin:8pt 0 2pt;">'
-            + '<img src="' + b64 + '" style="max-width:100%;height:auto;display:block;margin:0 auto;" /></p>\n';
-      if (caption) html += '<p class="fig-caption-w"><span class="fig-num-w">Şekil ' + figIdx + '.</span> ' + caption + '</p>\n';
+  function addText(t) {
+    t = (t || '').trim();
+    if (t.length > 10 && !seen.has(t.slice(0, 60))) {
+      seen.add(t.slice(0, 60));
+      html += '<p>' + t + '</p>\n';
     }
-    html += '\n';
   }
 
-  // ── Yönetici Özeti ────────────────────────────────────────────────────────
-  const exec = document.querySelector('.hb-exec');
-  if (exec) {
-    html += '<h2>Yönetici Özeti</h2>\n';
-    exec.querySelectorAll('p').forEach(p => {
-      const t = (p.innerText||'').trim();
-      if (t.length > 8) html += '<p>' + t + '</p>\n';
-    });
-  }
-
-  // ── Resmi Parametre Verileri ──────────────────────────────────────────────
+  // ── Resmi Parametre Tablosu ───────────────────────────────────────────────
   const official = document.querySelector('.hb-official');
   if (official) {
     html += '<h2>Resmi Parametre Verileri</h2>\n';
-    const items = official.querySelectorAll('.hb-off-item');
-    if (items.length > 0) {
-      html += '<div style="column-span:all;"><table><thead><tr><th>Parametre</th><th>Değer</th></tr></thead><tbody>\n';
-      items.forEach(item => {
-        const k = (item.querySelector('.hb-off-key')||{}).innerText||'';
-        const v = (item.querySelector('.hb-off-val')||{}).innerText||'';
-        if (k && v) html += '<tr><td>' + k.trim() + '</td><td>' + v.trim() + '</td></tr>\n';
+    html += '<div style="column-span:all;"><table><thead><tr><th>Parametre</th><th>Değer</th></tr></thead><tbody>\n';
+    official.querySelectorAll('.hb-off-item').forEach(item => {
+      const k = (item.querySelector('.hb-off-key') || {}).innerText || '';
+      const v = (item.querySelector('.hb-off-val') || {}).innerText || '';
+      if (k && v) html += '<tr><td>' + k.trim() + '</td><td>' + v.trim() + '</td></tr>\n';
+    });
+    html += '</tbody></table></div>\n';
+  }
+
+  // ── hb-inner'daki tüm öğeleri sırayla tara ───────────────────────────────
+  const inner = document.querySelector('.hb-inner');
+  if (!inner) return html;
+
+  Array.from(inner.children).forEach(function(el) {
+    // Atla: export bar, official (zaten eklendi), video iframe
+    if (el.id === 'sr-export-bar') return;
+    if (el.classList.contains('hb-official')) return;
+    if (el.querySelector('iframe')) return;
+
+    // ── Bölüm etiketi → h2 başlığı
+    if (el.classList.contains('hb-section-lbl')) {
+      const spanEl = el.querySelector('span');
+      const title = stripEmoji((spanEl ? spanEl.innerText : el.innerText) || '');
+      if (title.trim().length > 3) html += '<h2>' + title.trim() + '</h2>\n';
+      return;
+    }
+
+    // ── Sonuç bölümü
+    if (el.classList.contains('hb-final')) {
+      html += '<h2>Sonuç</h2>\n';
+      el.querySelectorAll('h2, p').forEach(function(ch) { addText(ch.innerText); });
+      return;
+    }
+
+    // ── Stat satırı → sayısal özet olarak yoksay (sadece etiket/sayı, düz metin değil)
+    if (el.classList.contains('hb-stat-row')) return;
+
+    // ── Prox tablosu
+    if (el.classList.contains('hb-prox')) {
+      html += '<h3>Yakın Yerleşim Merkezleri</h3>\n';
+      html += '<div style="column-span:all;"><table><thead><tr><th>Yer</th><th>Uzaklık</th></tr></thead><tbody>\n';
+      el.querySelectorAll('.hb-prox-item').forEach(function(item) {
+        const place = (item.querySelector('.prox-place') || {}).innerText || '';
+        const dist  = (item.querySelector('.prox-dist')  || {}).innerText || '';
+        if (place && dist) html += '<tr><td>' + place.trim() + '</td><td>' + dist.trim() + '</td></tr>\n';
       });
       html += '</tbody></table></div>\n';
+      return;
     }
-  }
 
-  // ── Bölüm Etiketleri + İçerik (sibling walker) ───────────────────────────
-  document.querySelectorAll('.hb-section-lbl').forEach(lbl => {
-    const title = stripEmoji((lbl.querySelector('span')||{}).innerText || (lbl.innerText||''));
-    if (title.trim().length > 3) html += '<h2>' + title.trim() + '</h2>\n';
-
-    let el = lbl.nextElementSibling;
-    while (el && !el.classList.contains('hb-section-lbl') && !el.classList.contains('hb-final')) {
-
-      // Stat satırı
-      if (el.classList.contains('hb-stat-row')) {
-        el.querySelectorAll('.hb-stat-box').forEach(box => {
-          const lbl2 = (box.querySelector('.hb-stat-label')||{}).innerText||'';
-          const num  = (box.querySelector('.hb-stat-num')||{}).innerText||'';
-          const sub  = (box.querySelector('.hb-stat-sub')||{}).innerText||'';
-          if (lbl2 && num) html += '<p><strong>' + lbl2.trim() + ':</strong> ' + num.trim() + (sub ? ' — ' + sub.trim() : '') + '</p>\n';
-        });
+    // ── Tüm tablolar (column-span)
+    el.querySelectorAll('table').forEach(function(tbl) {
+      if (!tbl.closest('.hb-official') && !tbl.closest('.hb-prox')) {
+        html += '<div style="column-span:all;width:100%;overflow:hidden;">' + tbl.outerHTML + '</div>\n';
       }
-
-      // Yakınlık tablosu
-      if (el.classList.contains('hb-prox')) {
-        html += '<h3>Yakın Yerleşim Merkezleri</h3>\n';
-        html += '<div style="column-span:all;"><table><thead><tr><th>Yer</th><th>Uzaklık</th></tr></thead><tbody>\n';
-        el.querySelectorAll('.hb-prox-item').forEach(item => {
-          const place = (item.querySelector('.prox-place')||{}).innerText||'';
-          const dist  = (item.querySelector('.prox-dist')||{}).innerText||'';
-          if (place && dist) html += '<tr><td>' + place.trim() + '</td><td>' + dist.trim() + '</td></tr>\n';
-        });
-        html += '</tbody></table></div>\n';
-      }
-
-      // Analysis kutuları + accordion <details>
-      if (el.classList.contains('hb-analysis') || el.tagName === 'DETAILS') {
-        const headEl = el.querySelector('h4,h5,summary');
-        if (headEl) html += '<h3>' + stripEmoji((headEl.innerText||'').trim()) + '</h3>\n';
-        el.querySelectorAll('p,li').forEach(p => {
-          const t = (p.innerText||'').trim();
-          if (t.length > 8 && !seen.has(t.slice(0,50))) {
-            seen.add(t.slice(0,50));
-            html += '<p>' + t + '</p>\n';
-          }
-        });
-        el.querySelectorAll('table').forEach(tbl => {
-          html += '<div style="column-span:all;width:100%;overflow:hidden;">' + tbl.outerHTML + '</div>\n';
-        });
-      }
-
-      // Think zone'lar
-      if (el.classList.contains('hb-thinkzone') || el.classList.contains('hb-thinkzone2')) {
-        el.querySelectorAll('p').forEach(p => {
-          const t = (p.innerText||'').trim();
-          if (t.length > 8 && !seen.has(t.slice(0,50))) {
-            seen.add(t.slice(0,50));
-            html += '<p>' + t + '</p>\n';
-          }
-        });
-      }
-
-      // Highlight / alıntı
-      if (el.classList.contains('hb-highlight')) {
-        const t = (el.innerText||'').trim();
-        if (t.length > 8) html += '<blockquote>' + t + '</blockquote>\n';
-      }
-
-      // Düz metin kutuları
-      if (el.classList.contains('hb-prose') || el.tagName === 'P') {
-        const t = (el.innerText||'').trim();
-        if (t.length > 8 && !seen.has(t.slice(0,50))) {
-          seen.add(t.slice(0,50));
-          html += '<p>' + t + '</p>\n';
-        }
-      }
-
-      // İki sütunlu info box
-      if (el.classList.contains('hb-two-col')) {
-        el.querySelectorAll('.hb-info-box').forEach(box => {
-          const h = (box.querySelector('h5')||{}).innerText||'';
-          if (h.trim()) html += '<h3>' + stripEmoji(h.trim()) + '</h3>\n';
-          box.querySelectorAll('p,li').forEach(p => {
-            const t = (p.innerText||'').trim();
-            if (t.length > 8) html += '<p>' + t + '</p>\n';
-          });
-        });
-      }
-
-      // Tek tablo
-      if (el.tagName === 'TABLE') {
-        html += '<div style="column-span:all;width:100%;overflow:hidden;">' + el.outerHTML + '</div>\n';
-      }
-
-      // Kalan tüm div'lerden paragraf ve tablo çek (geo-grid, timeline vb.)
-      const handledClasses = ['hb-stat-row','hb-prox','hb-analysis','hb-thinkzone','hb-thinkzone2','hb-highlight','hb-prose','hb-two-col'];
-      const isHandled = handledClasses.some(c => el.classList.contains(c)) || el.tagName === 'DETAILS' || el.tagName === 'P' || el.tagName === 'TABLE';
-      if (!isHandled) {
-        el.querySelectorAll('p').forEach(p => {
-          const t = (p.innerText||'').trim();
-          if (t.length > 8 && !seen.has(t.slice(0,50))) {
-            seen.add(t.slice(0,50));
-            html += '<p>' + t + '</p>\n';
-          }
-        });
-        el.querySelectorAll('table').forEach(tbl => {
-          html += '<div style="column-span:all;width:100%;overflow:hidden;">' + tbl.outerHTML + '</div>\n';
-        });
-      }
-
-      el = el.nextElementSibling;
-    }
-    html += '\n';
-  });
-
-  // ── Sonuç bölümü ──────────────────────────────────────────────────────────
-  const finalEl = document.querySelector('.hb-final');
-  if (finalEl) {
-    html += '<h2>Sonuç</h2>\n';
-    finalEl.querySelectorAll('h2,p').forEach(el2 => {
-      const t = (el2.innerText||'').trim();
-      if (t.length > 8) html += '<p>' + t + '</p>\n';
     });
-  }
+
+    // ── Tüm paragraflar (details açıldıktan sonra innerText çalışır)
+    el.querySelectorAll('p').forEach(function(p) { addText(p.innerText); });
+
+    // ── Liste öğeleri (kaynakça vb.)
+    el.querySelectorAll('li').forEach(function(li) { addText(li.innerText); });
+  });
 
   return html;
 }
