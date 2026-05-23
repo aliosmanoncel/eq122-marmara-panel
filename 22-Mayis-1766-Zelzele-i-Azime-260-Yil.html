@@ -1595,17 +1595,13 @@ function stripEmoji(s) {
 }
 
 // ── İÇERİK TOPLAYICI ────────────────────────────────────────────────────────
-async function build1766Body() {
-  // 1. Tüm accordion <details> öğelerini aç
-  document.querySelectorAll('details.hb-accordion').forEach(d => { d.open = true; });
-  // 2. Tarayıcının layout'u güncellemesi için kısa bekleme
-  await new Promise(r => setTimeout(r, 250));
-
+// textContent: CSS visibility'den bağımsız — kapalı <details> içi dahil her şeyi okur
+function build1766Body() {
   let html = '';
   const seen = new Set();
 
   function addText(t) {
-    t = (t || '').trim();
+    t = (t || '').replace(/\s+/g, ' ').trim();
     if (t.length > 10 && !seen.has(t.slice(0, 60))) {
       seen.add(t.slice(0, 60));
       html += '<p>' + t + '</p>\n';
@@ -1617,9 +1613,9 @@ async function build1766Body() {
   if (official) {
     html += '<h2>Resmi Parametre Verileri</h2>\n';
     html += '<div style="column-span:all;"><table><thead><tr><th>Parametre</th><th>Değer</th></tr></thead><tbody>\n';
-    official.querySelectorAll('.hb-off-item').forEach(item => {
-      const k = (item.querySelector('.hb-off-key') || {}).innerText || '';
-      const v = (item.querySelector('.hb-off-val') || {}).innerText || '';
+    official.querySelectorAll('.hb-off-item').forEach(function(item) {
+      const k = (item.querySelector('.hb-off-key') || {}).textContent || '';
+      const v = (item.querySelector('.hb-off-val') || {}).textContent || '';
       if (k && v) html += '<tr><td>' + k.trim() + '</td><td>' + v.trim() + '</td></tr>\n';
     });
     html += '</tbody></table></div>\n';
@@ -1630,54 +1626,58 @@ async function build1766Body() {
   if (!inner) return html;
 
   Array.from(inner.children).forEach(function(el) {
-    // Atla: export bar, official (zaten eklendi), video iframe
     if (el.id === 'sr-export-bar') return;
     if (el.classList.contains('hb-official')) return;
     if (el.querySelector('iframe')) return;
+    if (el.classList.contains('hb-stat-row')) return;
 
-    // ── Bölüm etiketi → h2 başlığı
+    // ── Bölüm etiketi → h2
     if (el.classList.contains('hb-section-lbl')) {
       const spanEl = el.querySelector('span');
-      const title = stripEmoji((spanEl ? spanEl.innerText : el.innerText) || '');
-      if (title.trim().length > 3) html += '<h2>' + title.trim() + '</h2>\n';
+      const raw = (spanEl ? spanEl.textContent : el.textContent) || '';
+      const title = stripEmoji(raw.replace(/\s+/g, ' ').trim());
+      if (title.length > 3) html += '<h2>' + title + '</h2>\n';
       return;
     }
 
     // ── Sonuç bölümü
     if (el.classList.contains('hb-final')) {
       html += '<h2>Sonuç</h2>\n';
-      el.querySelectorAll('h2, p').forEach(function(ch) { addText(ch.innerText); });
+      el.querySelectorAll('p').forEach(function(p) { addText(p.textContent); });
       return;
     }
-
-    // ── Stat satırı → sayısal özet olarak yoksay (sadece etiket/sayı, düz metin değil)
-    if (el.classList.contains('hb-stat-row')) return;
 
     // ── Prox tablosu
     if (el.classList.contains('hb-prox')) {
       html += '<h3>Yakın Yerleşim Merkezleri</h3>\n';
       html += '<div style="column-span:all;"><table><thead><tr><th>Yer</th><th>Uzaklık</th></tr></thead><tbody>\n';
       el.querySelectorAll('.hb-prox-item').forEach(function(item) {
-        const place = (item.querySelector('.prox-place') || {}).innerText || '';
-        const dist  = (item.querySelector('.prox-dist')  || {}).innerText || '';
+        const place = (item.querySelector('.prox-place') || {}).textContent || '';
+        const dist  = (item.querySelector('.prox-dist')  || {}).textContent || '';
         if (place && dist) html += '<tr><td>' + place.trim() + '</td><td>' + dist.trim() + '</td></tr>\n';
       });
       html += '</tbody></table></div>\n';
       return;
     }
 
-    // ── Tüm tablolar (column-span)
+    // ── El kendisi <p> ise (örn. <p class="hb-prose">) — querySelectorAll kendi içini arar, kendisini bulamaz!
+    if (el.tagName === 'P') {
+      addText(el.textContent);
+      return;
+    }
+
+    // ── Tablolar (column-span ile, iki sütun dışına çıksın)
     el.querySelectorAll('table').forEach(function(tbl) {
       if (!tbl.closest('.hb-official') && !tbl.closest('.hb-prox')) {
         html += '<div style="column-span:all;width:100%;overflow:hidden;">' + tbl.outerHTML + '</div>\n';
       }
     });
 
-    // ── Tüm paragraflar (details açıldıktan sonra innerText çalışır)
-    el.querySelectorAll('p').forEach(function(p) { addText(p.innerText); });
+    // ── Tüm paragraflar — textContent, kapalı details dahil her şeyi okur
+    el.querySelectorAll('p').forEach(function(p) { addText(p.textContent); });
 
-    // ── Liste öğeleri (kaynakça vb.)
-    el.querySelectorAll('li').forEach(function(li) { addText(li.innerText); });
+    // ── Liste öğeleri (kaynakça, dipnot vb.)
+    el.querySelectorAll('li').forEach(function(li) { addText(li.textContent); });
   });
 
   return html;
@@ -1687,7 +1687,7 @@ async function build1766Body() {
 document.getElementById('sr-export-pdf').addEventListener('click', async function() {
   const ld = showExportLoading('Görseller hazırlanıyor, lütfen bekleyin…');
   try {
-    const bodyHTML = await build1766Body();
+    const bodyHTML = build1766Body();
     const now = new Date().toLocaleDateString('tr-TR',{year:'numeric',month:'long',day:'numeric'});
     const doi = 'doi:10.1016/j.seismoreport.2026.zelzele.azime';
     const fullHTML = `<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
@@ -1770,7 +1770,7 @@ tr:last-child td{border-bottom:1.5px solid #c41535;}
 document.getElementById('sr-export-word').addEventListener('click', async function() {
   const ld = showExportLoading('Doküman hazırlanıyor, lütfen bekleyin…');
   try {
-    const bodyHTML = await build1766Body();
+    const bodyHTML = build1766Body();
     const now = new Date().toLocaleDateString('tr-TR',{year:'numeric',month:'long',day:'numeric'});
     const doi = 'doi:10.1016/j.seismoreport.2026.zelzele.azime';
     const wordHTML = `<!DOCTYPE html>
